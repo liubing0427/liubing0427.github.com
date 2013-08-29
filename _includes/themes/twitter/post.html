@@ -1,12 +1,9 @@
 <div class="page-header">
-  	<h1>
-  		【<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ page.category }}-ref">{{ page.category }}</a>】 {{ page.title }} 
-  		<small>-- {{ page.date | date_to_long_string }} </small>
-	</h1>
+  <h1>{{ page.title }} <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span8">
+  <div class="span10">
     {{ content }}
     <hr>
     <div class="pagination">
@@ -29,31 +26,15 @@
   </div>
   
   <div class="span4">
-    
+    <h4>Published</h4>
+    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+
   {% unless page.tags == empty %}
-    <div class="sidebar-title">标签</div>
+    <h4>Tags</h4>
     <ul class="tag_box">
     {% assign tags_list = page.tags %}
     {% include JB/tags_list %}
     </ul>
   {% endunless %}  
-  
-    <hr>
-  
-  	<div class="sidebar-title">相关文章</div>
-    <ul>
-    {% for related_post in site.related_posts limit:5 %}
-    	<li><a href="{{ BASE_PATH }}{{ related_post.url }}">{{ related_post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <hr>
-    <div class="sidebar-title">分享到</div><br>
-    <!-- JiaThis Button BEGIN -->
-    <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1376361308902866&move=0" charset="utf-8"></script>
-    <!-- JiaThis Button END -->
-    <!-- UJian Button BEGIN -->
-    	<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?type=slide"></script>
-    <!-- UJian Button END -->
-  
   </div>
 </div>
