@@ -70,6 +70,22 @@ body {
 }
 
 /******************* customized *********************/
+body {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+li, p {
+	line-height: 22px;
+	font-size: 14px;
+}
+
+h1 {font-size: 24px; clear: both;}
+h3 {font-size: 18px;}
+h4 {font-size: 16px;}
+
+h3,h4 {line-height: 42px; clear: both;}
+
 code {
 	background-color: #000000;
 	font-size: 12px;
@@ -148,5 +164,32 @@ div.post-footer {
 	margin: 10px 0;
 	clear: both;
 	line-height: 0;
+}
+
+div.home-page-sidebar {
+	/*width: 100%;*/
+	/*float: right;*/
+	margin: 10px;
+}
+
+.sidebar-title {
+	font-weight: bold;
+	border-radius: 3px 3px 3px 3px;
+	padding: 3px 6px;
+	width: 100%;
+	background-color: #EEEEEE;
+}
+
+/******************* images *******************/
+img[alt="rss feed"] { 
+	float: right; 
+	margin-top: 5px;
+}
+
+img[alt="blogging"] { 
+	float: left; 
+	width: 500;
+	height: 326;
+	margin-right: 20px;
 }
 	
