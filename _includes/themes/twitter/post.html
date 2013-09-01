@@ -1,8 +1,8 @@
 <div class="page-header">
   <h1>
-		[<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ page.category }}-ref">{{ page.category }}</a>] {{ page.title }} 
-  		<small>-- {{ page.date | date_to_long_string }} </small>
-		</h1>
+        [<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ page.category }}-ref">{{ page.category }}</a>] {{ page.title }} 
+          <small>-- {{ page.date | date_to_long_string }} </small>
+        </h1>
 </div>
 
 <div class="row">
@@ -12,15 +12,15 @@
     <div class="pagination">
       <ul>
       {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}"><i class="icon-fixed-width icon-arrow-left"></i> Previous</a></li>
       {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <li class="prev disabled"><a><i class="icon-fixed-width icon-arrow-left"></i> Previous</a></li>
       {% endif %}
         <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><i class="icon-fixed-width icon-arrow-right"></i> Next</a></li>
       {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next disabled"><a><i class="icon-fixed-width icon-arrow-right"></i> Next</a>
       {% endif %}
       </ul>
     </div>
@@ -29,22 +29,30 @@
   </div>
   
   <div class="span4">
-    <h4>Published</h4>
-    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
-
+    
   {% unless page.tags == empty %}
-    <h4>Tags</h4>
+    <div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i> Tags</div>
     <ul class="tag_box">
     {% assign tags_list = page.tags %}
     {% include JB/tags_list %}
     </ul>
-  {% endunless %}
-	<!-- Baidu Button BEGIN -->
-	<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=right&amp;uid=254497" ></script>
-	<script type="text/javascript" id="bdshell_js"></script>
-	<script type="text/javascript">
-	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
-	</script>
-	<!-- Baidu Button END -->  
+  {% endunless %}  
+  
+    <hr>
+  
+  	<div class="sidebar-title"><i class="icon-fixed-width icon-file-text"></i> Related</div>
+    <ul>
+    {% for related_post in site.related_posts limit:5 %}
+    	<li><a href="{{ BASE_PATH }}{{ related_post.url }}">{{ related_post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <hr>
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=right&amp;uid=254497" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </script>
+    <!-- Baidu Button END -->  
   </div>
 </div>

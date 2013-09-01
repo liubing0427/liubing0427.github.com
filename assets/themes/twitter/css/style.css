@@ -40,44 +40,44 @@ body {
 /* tag_box ======================================================== */
 
 .tag_box {
-	list-style:none;
-	margin:0;
-	padding:5px 0 ;
-	overflow:hidden;
+    list-style:none;
+    margin:0;
+    padding:5px 0 ;
+    overflow:hidden;
 }
 .tag_box li {
-	line-height:28px;
+    line-height:28px;
 }
 .tag_box.inline li {
-	float:left;
+    float:left;
 }
 .tag_box a {
-	padding: 3px 6px;
-	margin: 2px;
-	background: #eee;
-	color:#005F6B;
-	border-radius: 3px;
-	text-decoration:none;
+    padding: 3px 6px;
+    margin: 2px;
+    background: #eee;
+    color:#005F6B;
+    border-radius: 3px;
+    text-decoration:none;
 }
 .tag_box a span{
-	vertical-align:super;
-	font-size:0.8em;
+    vertical-align:super;
+    font-size:0.8em;
 }
 .tag_box a.active {
-	background:#57A957;
-	border:1px solid #4C964D;
-	color:#FFF;
+    background:#57A957;
+    border:1px solid #4C964D;
+    color:#FFF;
 }
 
 /******************* customized *********************/
 body {
-	font-size: 14px;
-	line-height: 22px;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 li, p {
-	line-height: 22px;
-	font-size: 14px;
+    line-height: 22px;
+    font-size: 14px;
 }
 
 h1 {font-size: 24px; clear: both;}
@@ -87,38 +87,38 @@ h4 {font-size: 16px;}
 h3,h4 {line-height: 42px; clear: both;}
 
 code {
-	background-color: #000000;
-	font-size: 12px;
-	color: #333333;
+    background-color: #000000;
+    font-size: 12px;
+    color: #333333;
 }
 
 blockquote {
-	color: #909090;
-	margin: 0 0 18px 18px;
+    color: #909090;
+    margin: 0 0 18px 18px;
 }
 
 blockquote p {
-	font-style: italic;
-	font-size: 14px;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .highlight pre {background-color: #000000;}
 .highlight pre code{color: white;}
 
 .signature {
-	font-size: 15px;
-	color: #9D9D9D;
-	font-style:italic;
+    font-size: 15px;
+    color: #9D9D9D;
+    font-style:italic;
 }
 
 /* post content in post page*/
 div.span8 {
-	width: 680px;
+    width: 680px;
 }
 
 /* right sidebar in post page*/
 div.span4 {
-	width: 220px;
+    width: 220px;
 }
 
 /**************** homepage ********************/
@@ -127,69 +127,68 @@ div.home-page-content {
 }
 
 div.home-page-post .date {
-	color: #9D9D9D;
-	font-size: 16px;
+    color: #9D9D9D;
+    font-size: 16px;
 }
 
 div.home-page-post label{
-	font-weight: bold;
-	display: inline;
+    font-weight: bold;
+    display: inline;
 }
 
 div.home-page-post div.post-header{
-	width: 20%;
-	float: left;
-	margin-right: 10px;
+    width: 20%;
+    float: left;
+    margin-right: 10px;
 }
 
 div.home-page-post div.post-header .tags span, div.home-page-post div.post-header .category span {
-	font-size: 12px;
+    font-size: 12px;
 }
 
 div.home-page-post div.post-content{
-	overflow: hidden;
+    overflow: hidden;
 }
 
 div.home-page-post div.post-content div.title{
-	font-size: 16px;
-	font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 div.home-page-post div.post-content div.abstract{
-	color: #444444;
+    color: #444444;
 }
 
 div.post-footer {
-	border-bottom: 1px solid #EAEAEA;
-	margin: 10px 0;
-	clear: both;
-	line-height: 0;
+    border-bottom: 1px solid #EAEAEA;
+    margin: 10px 0;
+    clear: both;
+    line-height: 0;
 }
 
 div.home-page-sidebar {
-	/*width: 100%;*/
-	/*float: right;*/
-	margin: 10px;
+    /*width: 100%;*/
+    /*float: right;*/
+    margin: 10px;
 }
 
 .sidebar-title {
-	font-weight: bold;
-	border-radius: 3px 3px 3px 3px;
-	padding: 3px 6px;
-	width: 100%;
-	background-color: #EEEEEE;
+    font-weight: bold;
+    border-radius: 3px 3px 3px 3px;
+    padding: 3px 6px;
+    width: 100%;
+    background-color: #EEEEEE;
+}
+a.rss_feed { 
+    float: right; 
+    margin-top: 5px;
 }
 
 /******************* images *******************/
-img[alt="rss feed"] { 
-	float: right; 
-	margin-top: 5px;
-}
-
 img[alt="blogging"] { 
-	float: left; 
-	width: 500;
-	height: 326;
-	margin-right: 20px;
+    float: left; 
+    width: 500;
+    height: 326;
+    margin-right: 20px;
 }
-	
+    

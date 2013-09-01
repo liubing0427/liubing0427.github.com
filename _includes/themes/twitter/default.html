@@ -34,11 +34,13 @@
         <div class="container">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
           <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
+            <li><a href="/about.html"><i class="icon-large icon-user"></i> About Me</a></li>
+            <li><a href="/archive.html"><i class="icon-large icon-th-list"></i> Archive</a></li>
+            <li><a href="/categories.html"><i class="icon-large icon-folder-open"></i> Categories</a></li>
+            <li><a href="/tags.html"><i class="icon-large icon-tags"></i> Tags</a></li>
+            <li><a href="/messageboard.html"><i class="icon-large icon-comment"></i> Message Board</a></li>
           </ul>
-		  <a href="/atom.xml"><img alt="rss feed" src="/images/rss.png" title="订阅本站"></a>
+          <a class="rss_feed" href="/atom.xml"><i class="icon-2x icon-rss"></i></a>
         </div>
       </div>
     </div>
