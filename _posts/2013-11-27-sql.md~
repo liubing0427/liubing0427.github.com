@@ -7,8 +7,7 @@ tags: [Sql, Sql Server, Trigger, Procedure, Schema]
 ---
 {% include JB/setup %}
 
-<p><img alt='datasync' src='/assets/image/posts/newsyncgroup.png' width="594" height="405"/></p>
-
+<p><img alt='datasync' src='/assets/image/posts/newsyncgroup.png' width="100" height="100"/></p>
 最近在负责公司部署在Azure的DB升级的过程中遇到一些问题，公司升级方式采用的是使用Data Sync同步DB数据到目的端，然后升级目的端数据。在Data Sync的时候经常会出错，查看异常发现是因为往微软自己建出来的表里插入null值导致的，一般情况下只要删除所有相关的Data Sync Group就会将这些表清理掉，但有时因为某些原因会导致清理不掉，这个时候就不能进行Data Sync了，免费的功能果然问题多，没办法，只能自己动手删除了。
 
 执行Data Sync，微软会在你的DB里面对应每张表创建Trigger、Procedure、和Schema为[DataSync]的表。
