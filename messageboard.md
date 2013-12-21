@@ -13,6 +13,4 @@ description: ""
 <h2 id='id3'>You can leave messages to me if you have any suggestions or questions.</h2>
 
 ------
-<section>
-  {% include JB/comments %}
-</section>
+{% include JB/comments %}

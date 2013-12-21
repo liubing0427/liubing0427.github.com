@@ -4,7 +4,6 @@ title: "一些有用的Sql语句"
 description: "删除DB所有的Trigger、Procedure、Schema，查询整个DB指定schema哪一列含有特定值"
 category: Sql
 tags: [Sql, Sql Server, Trigger, Procedure, Schema]
-figure:
 ---
 {% include JB/setup %}
 
