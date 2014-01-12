@@ -5,7 +5,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 <title>Harmony Search , 和谐搜索</title>
 <link rel="stylesheet" type="text/css" href="css/search.css"></link>
-<link rel="shortcut icon" href="../images/favicon_search.ico">
+<link rel="shortcut icon" href="../images/favicon.ico">
 <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
 <script type="text/javascript" src="js/search.js"></script>
 </head>
