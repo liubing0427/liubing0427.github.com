@@ -4,7 +4,7 @@ title: "Message Board"
 description: ""
 ---
 {% include JB/setup %}
-<div class="span10">
+<div class="span10" text-align="center">
 <hr />
 
 <h2 id='id1'>欢迎来到我的博客.</h2>

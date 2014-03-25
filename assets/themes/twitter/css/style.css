@@ -191,4 +191,8 @@ img[alt="blogging"] {
     height: 326;
     margin-right: 20px;
 }
-    
+
+/******************* duoshuo *******************/
+#ds-reset .ds-powered-by {
+  display: none;
+}
