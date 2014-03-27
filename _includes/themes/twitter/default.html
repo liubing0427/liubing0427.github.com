@@ -27,30 +27,28 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   -->
-    {% include JB/analytics %}
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb8e145711258e179270df3c5f1b3c84b' type='text/javascript'%3E%3C/script%3E"));
-</script>
   </head>
-
   <body>
-
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            <li><a href="/about"><i class="icon-large icon-user"></i> About Me</a></li>
-            <li><a href="/archive"><i class="icon-large icon-th-list"></i> Archive</a></li>
-            <li><a href="/categories"><i class="icon-large icon-folder-open"></i> Categories</a></li>
-            <li><a href="/tags"><i class="icon-large icon-tags"></i> Tags</a></li>
-            <li><a href="/messageboard"><i class="icon-large icon-comment"></i> Message Board</a></li>
-          </ul>
-          <a class="rss_feed" href="/atom.xml"><i class="icon-2x icon-rss"></i></a>
+    <header id="header">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <a class="brand" href="{{ HOME_PATH }}">
+    	       <b class="brand__forename">Bing's</b>
+             <b class="brand__surname">Blog</b>
+            </a>
+            <ul class="nav">
+              <li><a href="/about"><i class="icon-large icon-user"></i> About Me</a></li>
+              <li><a href="/archive"><i class="icon-large icon-th-list"></i> Archive</a></li>
+              <li><a href="/categories"><i class="icon-large icon-folder-open"></i> Categories</a></li>
+              <li><a href="/tags"><i class="icon-large icon-tags"></i> Tags</a></li>
+              <li><a href="/messageboard"><i class="icon-large icon-comment"></i> Message Board</a></li>
+            </ul>
+            <a class="rss_feed" href="/atom.xml"><i class="icon-2x icon-rss"></i></a>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="container">
 
@@ -63,5 +61,6 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       </footer>
 
     </div> <!-- /container -->
+    {% include JB/analytics %}
   </body>
 </html>

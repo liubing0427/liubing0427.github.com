@@ -184,6 +184,11 @@ a.rss_feed {
     margin-top: 5px;
 }
 
+.brand__forename {
+    font-weight: bold;
+    color: #4ecdc4;
+}
+
 /******************* images *******************/
 img[alt="blogging"] { 
     float: left; 
