@@ -189,6 +189,12 @@ a.rss_feed {
     color: #4ecdc4;
 }
 
+.title_name {
+    font-weight: bold;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 108%;
+}
+
 /******************* images *******************/
 img[alt="blogging"] { 
     float: left; 
