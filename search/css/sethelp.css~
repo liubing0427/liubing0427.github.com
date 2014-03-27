@@ -108,7 +108,7 @@ h4 {
 .brs a {
     font-size: 16px;
     padding-left: 40px;
-    background: url(http://blogstroage.qiniudn.com/image/ie.gif) no-repeat 10px center;
+    background: url(../image/ie.gif) no-repeat 10px center;
     display: inline-block;
     color: #000000;
     text-decoration: none;
@@ -116,63 +116,63 @@ h4 {
 }
 
 .brs a.ff_icon {
-    background: url(http://blogstroage.qiniudn.com/image/firefox.gif) no-repeat 10px center;
+    background: url(../image/firefox.gif) no-repeat 10px center;
 }
 
 .brs a.s360_icon {
-    background: url(http://blogstroage.qiniudn.com/image/360.gif) no-repeat 10px center;
+    background: url(../image/360.gif) no-repeat 10px center;
 }
 
 .brs a.aoyou_icon {
-    background: url(http://blogstroage.qiniudn.com/image/aoyou3.gif) no-repeat 10px center;
+    background: url(../image/aoyou3.gif) no-repeat 10px center;
 }
 
 .brs a.sougou_icon {
-    background: url(http://blogstroage.qiniudn.com/image/sougou.gif) no-repeat 10px center;
+    background: url(../image/sougou.gif) no-repeat 10px center;
 }
 
 .brs a.qq_icon {
-    background: url(http://blogstroage.qiniudn.com/image/qq.gif) no-repeat 10px center;
+    background: url(../image/qq.gif) no-repeat 10px center;
 }
 
 .brs a.tt_icon {
-    background: url(http://blogstroage.qiniudn.com/image/tt.gif) no-repeat 10px center;
+    background: url(../image/tt.gif) no-repeat 10px center;
 }
 
 .brs a.chrome_icon {
-    background: url(http://blogstroage.qiniudn.com/image/chrome.gif) no-repeat 10px center;
+    background: url(../image/chrome.gif) no-repeat 10px center;
 }
 
 .brs a.s360jishu_icon {
-    background: url(http://blogstroage.qiniudn.com/image/360jishu.gif) no-repeat 10px center;
+    background: url(../image/360jishu.gif) no-repeat 10px center;
 }
 
 .brs a.world_jishu_icon {
-    background: url(http://blogstroage.qiniudn.com/image/world_jishu.gif) no-repeat 10px center;
+    background: url(../image/world_jishu.gif) no-repeat 10px center;
 }
 
 .brs a.opera_icon {
-    background: url(http://blogstroage.qiniudn.com/image/opera.gif) no-repeat 10px center;
+    background: url(../image/opera.gif) no-repeat 10px center;
 }
 
 .brs a.world_icon {
-    background: url(http://blogstroage.qiniudn.com/image/world.gif) no-repeat 10px center;
+    background: url(../image/world.gif) no-repeat 10px center;
 }
 
 .brs a.safari_icon {
-    background: url(http://blogstroage.qiniudn.com/image/safari.gif) no-repeat 10px center;
+    background: url(../image/safari.gif) no-repeat 10px center;
 }
 
 .brs a.green_icon {
-    background: url(http://blogstroage.qiniudn.com/image/green.gif) no-repeat 10px center;
+    background: url(../image/green.gif) no-repeat 10px center;
 }
 
 .brs a.kr_icon {
-    background: url(http://blogstroage.qiniudn.com/image/kr.gif) no-repeat 10px center;
+    background: url(../image/kr.gif) no-repeat 10px center;
 }
 
 .brs a.bdbrowser_icon {
-    background: url(http://blogstroage.qiniudn.com/image/bdbrowser_new.png) no-repeat 10px center;
+    background: url(../image/bdbrowser_new.png) no-repeat 10px center;
 }
 
 .tishi_con {
@@ -181,13 +181,13 @@ h4 {
 }
 
 .tool_con {
-    background: url(http://blogstroage.qiniudn.com/image/tuijian_bg.gif) repeat-x;
+    background: url(../image/tuijian_bg.gif) repeat-x;
     height: 50px;
     line-height: 50px;
 }
 
 .tool_con2 {
-    background: url(http://blogstroage.qiniudn.com/image/tuijian_bg.gif) repeat-x left bottom;
+    background: url(../image/tuijian_bg.gif) repeat-x left bottom;
     height: 10px;
     line-height: 30px;
 }
@@ -247,7 +247,7 @@ h6 {
 
 .sz_qus,.kj_qus {
     position: relative;
-    background: url(http://blogstroage.qiniudn.com/image/question.gif) no-repeat;
+    background: url(../image/question.gif) no-repeat;
     vertical-align: middle;
     width: 16px;
     height: 16px;
@@ -255,7 +255,7 @@ h6 {
 }
 
 a.kj_qus:hover,a.sz_qus:hover {
-    background: url(http://blogstroage.qiniudn.com/image/question_active.gif) no-repeat;
+    background: url(../image/question_active.gif) no-repeat;
 }
 
 .kj_tishi {
@@ -289,15 +289,15 @@ a.kj_qus:hover,a.sz_qus:hover {
     display: inline-block;
     margin: -20px 0 0 940px;
     width: 9px;
-    background: url(http://blogstroage.qiniudn.com/image/arrow_close.gif) no-repeat;
+    background: url(../image/arrow_close.gif) no-repeat;
 }
 
 .arrow_open {
-    background: url(http://blogstroage.qiniudn.com/image/arrow_open.gif) no-repeat;
+    background: url(../image/arrow_open.gif) no-repeat;
 }
 
 .kj_bt,a.kj_bt:link,a.kj_bt:visited,a.kj_bt:hover,a.kj_bt:active {
-    background: url(http://blogstroage.qiniudn.com/image/kj_bt.gif) no-repeat left center;
+    background: url(../image/kj_bt.gif) no-repeat left center;
     width: 58px;
     height: 27px;
     line-height: 27px;
@@ -315,7 +315,7 @@ a.kj_bt:visited {
 }
 
 a.kj_bt:hover {
-    background: url(http://blogstroage.qiniudn.com/image/kj_bt_active.gif) no-repeat left center;
+    background: url(../image/kj_bt_active.gif) no-repeat left center;
 }
 
 a.kj_bt:active {
@@ -350,7 +350,7 @@ div img {
 .chrome_xz {
     width: 144px;
     height: 29px;
-    background: url(http://blogstroage.qiniudn.com/image/chrome_bg.jpg);
+    background: url(../image/chrome_bg.jpg);
     display: inline-block;
     color: #fff;
     font-weight: bold;
