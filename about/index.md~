@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About Me"
-description: "Liu Bing, Code Monkey"
+description: "Liu Bing, 程序猿, 码农"
 group: navigation
 ---
 {% include JB/setup %}
