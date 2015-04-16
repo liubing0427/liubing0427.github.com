@@ -3,7 +3,7 @@ layout: post
 title: "CSS动画练习-大白和哆啦A梦"
 description: "利用纯CSS实现会动的大白和哆啦A梦"
 category: CSS
-tags: [CSS,Animation]
+tags: [CSS,Animation,大白,哆啦A梦]
 ---
 {% include JB/setup %}
 侧面行走的[大白](https://jsfiddle.net/rubatong/2oyLc2av/embedded/result/)
