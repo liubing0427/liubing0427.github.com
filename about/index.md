@@ -7,7 +7,7 @@ group: navigation
 {% include JB/setup %}
 ---
 
-* 2014 - now, SoftwareEngineer@[Zork](http://www.zork.com.cn)
+* 2014 - 2015, SoftwareEngineer@[Zork](http://www.zork.com.cn)
 * 2012 - 2014, SoftwareEngineer@[AvePoint](http://www.avepoint.com)
 * 2007 - 2012, BS@[Dlut](http://www.dlut.edu.cn)
 
