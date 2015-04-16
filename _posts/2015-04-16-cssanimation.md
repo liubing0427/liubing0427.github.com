@@ -9,7 +9,7 @@ tags: [CSS,Animation,大白,哆啦A梦]
 侧面行走的[大白](https://jsfiddle.net/rubatong/2oyLc2av/embedded/result/)
 
 
-<canvas id="buymax" height="0"/>
+<!--<canvas id="buymax" height="0"/>-->
 
 
 >修改自[sparrow tian](http://www.zhihu.com/people/sparrow-tian)的[怎样才能做一个大白？](http://zhi.hu/h2wo)
@@ -17,7 +17,7 @@ tags: [CSS,Animation,大白,哆啦A梦]
 挥舞胳膊的[哆啦a梦](https://jsfiddle.net/rubatong/99j0zc2d/6/embedded/result/),鼠标移到头部会变笑脸
 
 
-<canvas id="duola" height="0"/>
+<!--<canvas id="duola" height="0"/>-->
 
 
 >修改自[Pure CSS Design](http://purecss3.net/doraemon/doraemon_css3.html),需翻墙访问,国内查看[地址](http://mijiale.me/dora.html)
