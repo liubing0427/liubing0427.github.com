@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="baidu_union_verify" content="dafe71a3b0ba246dbd433cb490d3310d">
+    <meta name="google-site-verification" content="mw1KOVgTAORcoHehGDB5jnRa3xBuNuwCTXVqSvxyqBI" />
+    <meta name="msvalidate.01" content="4DC3638736C584D35FE2CB969B115974" />
+    <title>C#获取电脑的公网IP</title>
+    <meta name="description" content="使用C# WebClient联网获取内网电脑的公网IP">
+    <meta name="author" content="Liu Bing">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/twitter/css/pygments.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="http://blogstroage.qiniudn.com/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+  <body>
+    <header id="header">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <a class="brand" href="/">
+    	       <b class="brand__forename">Bing's</b>
+             <b class="brand__surname">Blog</b>
+            </a>
+            <ul class="nav">
+              <li><a href="/about"><i class="icon-large icon-user"></i><b class="title_name"> About Me</b></a></li>
+              <li><a href="/archive"><i class="icon-large icon-th-list"></i><b class="title_name"> Archive</b></a></li>
+              <li><a href="/categories"><i class="icon-large icon-folder-open"></i><b class="title_name"> Categories</b></a></li>
+              <li><a href="/tags"><i class="icon-large icon-tags"></i><b class="title_name"> Tags</b></a></li>
+              <li><a href="/messageboard"><i class="icon-large icon-comment"></i><b class="title_name"> Message Board</b></a></li>
+            </ul>
+            <a class="rss_feed" href="/atom.xml"><i class="icon-2x icon-rss"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>
+        [<a href="/categories#程序-ref">程序</a>] C#获取电脑的公网IP 
+          <small>-- 28 August 2013 </small>
+        </h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <h1 id="get_ip">GET IP</h1>
+<hr /><div class='highlight'><pre><code class='c#'><span class='n'>WebClient</span> <span class='n'>client</span> <span class='p'>=</span> <span class='k'>new</span> <span class='n'>WebClient</span><span class='p'>();</span>
+<span class='kt'>byte</span><span class='p'>[]</span> <span class='n'>bytRecv</span> <span class='p'>=</span> <span class='n'>client</span><span class='p'>.</span><span class='n'>DownloadData</span><span class='p'>(</span> <span class='s'>&quot;http://xn--ip-im8ckc.com/&quot;</span><span class='p'>);</span><span class='c1'>//下载网页数据</span>
+<span class='kt'>string</span> <span class='n'>str</span> <span class='p'>=</span> <span class='n'>System</span><span class='p'>.</span><span class='n'>Text</span><span class='p'>.</span><span class='n'>Encoding</span><span class='p'>.</span><span class='n'>UTF8</span><span class='p'>.</span><span class='n'>GetString</span><span class='p'>(</span><span class='n'>bytRecv</span><span class='p'>);</span>
+<span class='kt'>string</span> <span class='n'>r</span> <span class='p'>=</span> <span class='s'>@&quot;((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))&quot;</span><span class='p'>;</span>
+<span class='kt'>string</span> <span class='n'>ip</span> <span class='p'>=</span> <span class='n'>System</span><span class='p'>.</span><span class='n'>Text</span><span class='p'>.</span><span class='n'>RegularExpressions</span><span class='p'>.</span><span class='n'>Regex</span><span class='p'>.</span><span class='n'>Match</span><span class='p'>(</span><span class='n'>str</span><span class='p'>,</span> <span class='n'>r</span><span class='p'>).</span><span class='n'>ToString</span><span class='p'>();</span><span class='c1'>//提取信息 </span>
+</code></pre></div>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev disabled"><a><i class="icon-fixed-width icon-arrow-left"></i> Previous</a></li>
+      
+        <li><a href="/archive">Archive</a></li>
+      
+        <li class="next"><a href="/Blog/2013/11/27/sql" title="一些有用的Sql语句"><i class="icon-fixed-width icon-arrow-right"></i> Next</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"daoimpl"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    
+  
+    <div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i> Tags</div>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags#c#-ref">c# <span>1</span></a></li>
+     
+    	<li><a href="/tags#IP-ref">IP <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  
+    <hr>
+  
+  	<div class="sidebar-title"><i class="icon-fixed-width icon-file-text"></i> Related</div>
+    <ul>
+    
+    	<li><a href="/Blog/2015/04/16/cssanimation">CSS动画练习-大白和哆啦A梦</a></li>
+    
+    	<li><a href="/Blog/2013/12/19/html5canvas">Html5Canvas绘制时钟</a></li>
+    
+    	<li><a href="/Blog/2013/11/27/sql">一些有用的Sql语句</a></li>
+    
+    </ul>
+    <hr>
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=right&amp;uid=254497" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </script>
+    <!-- Baidu Button END -->  
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Liu Bing 2015 </p>
+      </footer>
+
+    </div> <!-- /container -->
+    
+
+
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb8e145711258e179270df3c5f1b3c84b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+  </body>
+</html>
+

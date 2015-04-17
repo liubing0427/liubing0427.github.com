@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="baidu_union_verify" content="dafe71a3b0ba246dbd433cb490d3310d">
+    <meta name="google-site-verification" content="mw1KOVgTAORcoHehGDB5jnRa3xBuNuwCTXVqSvxyqBI" />
+    <meta name="msvalidate.01" content="4DC3638736C584D35FE2CB969B115974" />
+    <title>一些有用的Sql语句</title>
+    <meta name="description" content="删除DB所有的Trigger、Procedure、Schema，查询整个DB指定schema哪一列含有特定值">
+    <meta name="author" content="Liu Bing">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/twitter/css/pygments.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="http://blogstroage.qiniudn.com/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+  <body>
+    <header id="header">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <a class="brand" href="/">
+    	       <b class="brand__forename">Bing's</b>
+             <b class="brand__surname">Blog</b>
+            </a>
+            <ul class="nav">
+              <li><a href="/about"><i class="icon-large icon-user"></i><b class="title_name"> About Me</b></a></li>
+              <li><a href="/archive"><i class="icon-large icon-th-list"></i><b class="title_name"> Archive</b></a></li>
+              <li><a href="/categories"><i class="icon-large icon-folder-open"></i><b class="title_name"> Categories</b></a></li>
+              <li><a href="/tags"><i class="icon-large icon-tags"></i><b class="title_name"> Tags</b></a></li>
+              <li><a href="/messageboard"><i class="icon-large icon-comment"></i><b class="title_name"> Message Board</b></a></li>
+            </ul>
+            <a class="rss_feed" href="/atom.xml"><i class="icon-2x icon-rss"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>
+        [<a href="/categories#Sql-ref">Sql</a>] 一些有用的Sql语句 
+          <small>-- 27 November 2013 </small>
+        </h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <p><img alt='datasync' height='405' src='/assets/image/posts/newsyncgroup.png' width='594' /></p>
+<p>最近在负责公司部署在Azure的DB升级的过程中遇到一些问题，公司升级方式采用的是使用<a href="http://www.windowsazure.com/en-us/manage/services/sql-databases/getting-started-w-sql-data-sync/">Data Sync</a>同步DB数据到目的端，然后升级目的端数据。在Data Sync的时候经常会出错，查看异常发现是:</p>
+
+<blockquote>
+<p>Database provisioning failed with the exception “Cannot insert the value NULL into column ‘provision_timestamp’, table ‘xxx.DataSync.provision_marker_dss’; column does not allow nulls. INSERT fails.The statement has been terminated.Inner exception: SqlException Error Code: -2146232060 - SqlError Number:515, Message: Cannot insert the value NULL into column ‘provision_timestamp’, table ‘xxx.DataSync.provision_marker_dss’; column does not allow nulls. INSERT fails. SqlError Number:3621, Message: The statement has been terminated. ” For more information, provide tracing ID ‘82c8420e-d184-4e83-8278-14a8f2cb3f00’ to customer support.</p>
+</blockquote>
+
+<p>一般情况下只要删除所有相关的Data Sync Group就会将这些表清理掉，但有时因为某些原因会导致清理不掉，这个时候就不能进行Data Sync了，免费的功能果然问题多，没办法，只能自己动手删除了。</p>
+
+<p>执行Data Sync，微软会在你的DB里面对应每张表创建Trigger、Procedure、和Schema为DataSync的表。</p>
+
+<h3 id="trigger">删除所有的Trigger</h3>
+
+<p>如果先删除Procedure，这时插入数据，触发器回去执行对应的存储过程，由于找不到而抛错，导致无法插入数据。</p>
+
+<p>这里有两种方式：</p>
+
+<ul>
+<li><strong>对DB执行下列语句，将结果复制出来，再对DB执行一次</strong> :</li>
+</ul>
+<div class='highlight'><pre><code class='sql'><span class='k'>SELECT</span> <span class='s1'>&#39;DROP TRIGGER &#39;</span> <span class='o'>+</span> <span class='n'>name</span>
+<span class='k'>FROM</span> <span class='n'>sysobjects</span>
+<span class='k'>WHERE</span> <span class='k'>type</span> <span class='o'>=</span> <span class='s1'>&#39;tr&#39;</span>
+</code></pre></div>
+<ul>
+<li><strong>直接对DB执行</strong> :</li>
+</ul>
+<div class='highlight'><pre><code class='sql'><span class='k'>DECLARE</span> <span class='o'>@</span><span class='k'>Trigger</span> <span class='nb'>VARCHAR</span> <span class='p'>(</span><span class='mi'>500</span><span class='p'>)</span>
+<span class='k'>DECLARE</span> <span class='n'>CUR</span> <span class='k'>CURSOR</span>
+<span class='k'>FOR</span> <span class='k'>SELECT</span> <span class='n'>name</span> <span class='k'>FROM</span> <span class='n'>sysobjects</span> <span class='k'>WHERE</span> <span class='k'>type</span> <span class='o'>=</span> <span class='s1'>&#39;tr&#39;</span>
+<span class='k'>OPEN</span> <span class='n'>CUR</span>
+<span class='k'>FETCH</span> <span class='k'>NEXT</span> <span class='k'>FROM</span> <span class='n'>CUR</span> <span class='k'>INTO</span> <span class='o'>@</span><span class='k'>Trigger</span>
+<span class='n'>WHILE</span> <span class='o'>@@</span><span class='n'>FETCH_STATUS</span> <span class='o'>=</span> <span class='mi'>0</span>
+<span class='k'>BEGIN</span>
+    <span class='k'>EXEC</span><span class='p'>(</span><span class='s1'>&#39;DROP TRIGGER &#39;</span> <span class='o'>+</span> <span class='o'>@</span><span class='k'>Trigger</span> <span class='o'>+</span> <span class='s1'>&#39;&#39;</span> <span class='p'>)</span>
+    <span class='k'>FETCH</span> <span class='k'>NEXT</span> <span class='k'>FROM</span> <span class='n'>CUR</span> <span class='k'>INTO</span> <span class='o'>@</span><span class='k'>Trigger</span>
+<span class='k'>END</span>
+<span class='k'>CLOSE</span> <span class='n'>CUR</span>
+<span class='k'>DEALLOCATE</span> <span class='n'>CUR</span>
+</code></pre></div>
+<h3 id="procedure">删除所有的Procedure</h3>
+
+<p>同理也有两种:</p>
+
+<ul>
+<li><strong>对DB执行下列语句，将结果复制出来，再对DB执行一次</strong> :</li>
+</ul>
+<div class='highlight'><pre><code class='sql'><span class='k'>SELECT</span> <span class='s1'>&#39;DROP PROCEDURE DATASYNC.[&#39;</span> <span class='o'>+</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>NAME</span> <span class='o'>+</span> <span class='s1'>&#39;]&#39;</span> <span class='k'>FROM</span> <span class='n'>SYS</span><span class='p'>.</span><span class='n'>PROCEDURES</span> <span class='n'>P</span>
+<span class='k'>INNER</span> <span class='k'>JOIN</span> <span class='n'>SYS</span><span class='p'>.</span> <span class='n'>SCHEMAS</span> <span class='n'>S</span> <span class='k'>ON</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>SCHEMA_ID</span> <span class='o'>=</span> <span class='n'>S</span><span class='p'>.</span><span class='n'>SCHEMA_ID</span>
+<span class='k'>WHERE</span> <span class='n'>P</span><span class='p'>.</span><span class='k'>TYPE</span> <span class='o'>=</span> <span class='s1'>&#39;P&#39;</span> <span class='k'>AND</span> <span class='n'>S</span><span class='p'>.</span><span class='n'>NAME</span> <span class='o'>=</span> <span class='s1'>&#39;DATASYNC&#39;</span> <span class='k'>AND</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>IS_MS_SHIPPED</span> <span class='o'>=</span> <span class='mi'>0</span> <span class='k'>AND</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>NAME</span> <span class='k'>NOT</span> <span class='k'>LIKE</span> <span class='s1'>&#39;sp[_]%diagram%&#39;</span>
+</code></pre></div>
+<ul>
+<li><strong>直接对DB执行</strong> :</li>
+</ul>
+<div class='highlight'><pre><code class='sql'><span class='k'>DECLARE</span> <span class='o'>@</span><span class='n'>PROCNAME</span> <span class='nb'>VARCHAR</span> <span class='p'>(</span><span class='mi'>500</span><span class='p'>)</span>
+<span class='k'>DECLARE</span> <span class='n'>CUR</span> <span class='k'>CURSOR</span>
+<span class='k'>FOR</span> <span class='k'>SELECT</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>NAME</span> <span class='k'>FROM</span> <span class='n'>SYS</span><span class='p'>.</span><span class='n'>PROCEDURES</span> <span class='n'>P</span>
+       <span class='k'>INNER</span> <span class='k'>JOIN</span> <span class='n'>SYS</span><span class='p'>.</span> <span class='n'>SCHEMAS</span> <span class='n'>S</span> <span class='k'>ON</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>SCHEMA_ID</span> <span class='o'>=</span> <span class='n'>S</span><span class='p'>.</span><span class='n'>SCHEMA_ID</span>
+       <span class='k'>WHERE</span> <span class='n'>P</span><span class='p'>.</span><span class='k'>TYPE</span> <span class='o'>=</span> <span class='s1'>&#39;P&#39;</span> <span class='k'>AND</span> <span class='n'>S</span><span class='p'>.</span><span class='n'>NAME</span> <span class='o'>=</span> <span class='s1'>&#39;DATASYNC&#39;</span> <span class='k'>AND</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>IS_MS_SHIPPED</span> <span class='o'>=</span> <span class='mi'>0</span> <span class='k'>AND</span> <span class='n'>P</span><span class='p'>.</span><span class='n'>NAME</span> <span class='k'>NOT</span> <span class='k'>LIKE</span> <span class='s1'>&#39;sp[_]%diagram%&#39;</span>
+<span class='k'>OPEN</span> <span class='n'>CUR</span>
+<span class='k'>FETCH</span> <span class='k'>NEXT</span> <span class='k'>FROM</span> <span class='n'>CUR</span> <span class='k'>INTO</span> <span class='o'>@</span><span class='n'>PROCNAME</span>
+<span class='n'>WHILE</span> <span class='o'>@@</span><span class='n'>FETCH_STATUS</span> <span class='o'>=</span> <span class='mi'>0</span>
+<span class='k'>BEGIN</span>
+    <span class='k'>EXEC</span><span class='p'>(</span><span class='s1'>&#39;DROP PROCEDURE DATASYNC.[&#39;</span> <span class='o'>+</span> <span class='o'>@</span><span class='n'>PROCNAME</span> <span class='o'>+</span> <span class='s1'>&#39;]&#39;</span> <span class='p'>)</span>
+    <span class='k'>FETCH</span> <span class='k'>NEXT</span> <span class='k'>FROM</span> <span class='n'>CUR</span> <span class='k'>INTO</span> <span class='o'>@</span><span class='n'>PROCNAME</span>
+<span class='k'>END</span>
+<span class='k'>CLOSE</span> <span class='n'>CUR</span>
+<span class='k'>DEALLOCATE</span> <span class='n'>CUR</span>
+</code></pre></div>
+<h3 id="schema">删除所有的Schema</h3>
+
+<ul>
+<li><strong>对DB执行下列语句，将结果复制出来，再对DB执行一次</strong> :</li>
+</ul>
+<div class='highlight'><pre><code class='sql'><span class='k'>SELECT</span> <span class='s1'>&#39;DROP TABLE DataSync.[&#39;</span> <span class='o'>+</span><span class='n'>name</span> <span class='o'>+</span> <span class='s1'>&#39;]&#39;</span> <span class='k'>FROM</span> <span class='n'>sys</span><span class='p'>.</span> <span class='n'>tables</span> <span class='k'>WHERE</span> <span class='k'>schema_name</span><span class='p'>(</span> <span class='p'>[</span><span class='n'>schema_id</span><span class='p'>]</span> <span class='p'>)</span> <span class='o'>=</span> <span class='s1'>&#39;DataSync&#39;</span>
+</code></pre></div>
+<ul>
+<li><strong>直接对DB执行</strong> :</li>
+</ul>
+<div class='highlight'><pre><code class='sql'><span class='k'>DECLARE</span> <span class='o'>@</span><span class='n'>TableName</span> <span class='nb'>VARCHAR</span> <span class='p'>(</span><span class='mi'>500</span><span class='p'>)</span>
+<span class='k'>DECLARE</span> <span class='n'>CUR</span> <span class='k'>CURSOR</span>
+<span class='k'>FOR</span> <span class='k'>SELECT</span> <span class='n'>NAME</span> <span class='k'>FROM</span> <span class='n'>sys</span><span class='p'>.</span> <span class='n'>tables</span> <span class='k'>WHERE</span> <span class='k'>schema_name</span><span class='p'>(</span> <span class='p'>[</span><span class='n'>schema_id</span><span class='p'>]</span> <span class='p'>)</span> <span class='o'>=</span> <span class='s1'>&#39;DataSync&#39;</span>
+<span class='k'>OPEN</span> <span class='n'>CUR</span>
+<span class='k'>FETCH</span> <span class='k'>NEXT</span> <span class='k'>FROM</span> <span class='n'>CUR</span> <span class='k'>INTO</span> <span class='o'>@</span><span class='n'>TableName</span>
+<span class='n'>WHILE</span> <span class='o'>@@</span><span class='n'>FETCH_STATUS</span> <span class='o'>=</span> <span class='mi'>0</span>
+<span class='k'>BEGIN</span>
+    <span class='k'>EXEC</span><span class='p'>(</span><span class='s1'>&#39;DROP TABLE DataSync.[&#39;</span> <span class='o'>+</span> <span class='o'>@</span><span class='n'>TableName</span> <span class='o'>+</span> <span class='s1'>&#39;]&#39;</span> <span class='p'>)</span>
+    <span class='k'>FETCH</span> <span class='k'>NEXT</span> <span class='k'>FROM</span> <span class='n'>CUR</span> <span class='k'>INTO</span> <span class='o'>@</span><span class='n'>TableName</span>
+<span class='k'>END</span>
+<span class='k'>CLOSE</span> <span class='n'>CUR</span>
+<span class='k'>DEALLOCATE</span> <span class='n'>CUR</span>
+</code></pre></div>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/Blog/2013/08/28/Get_IP" title="C#获取电脑的公网IP"><i class="icon-fixed-width icon-arrow-left"></i> Previous</a></li>
+      
+        <li><a href="/archive">Archive</a></li>
+      
+        <li class="next"><a href="/Blog/2013/12/19/html5canvas" title="Html5Canvas绘制时钟"><i class="icon-fixed-width icon-arrow-right"></i> Next</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"daoimpl"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    
+  
+    <div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i> Tags</div>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags#Sql-ref">Sql <span>1</span></a></li>
+     
+    	<li><a href="/tags#Sql Server-ref">Sql Server <span>1</span></a></li>
+     
+    	<li><a href="/tags#Trigger-ref">Trigger <span>1</span></a></li>
+     
+    	<li><a href="/tags#Procedure-ref">Procedure <span>1</span></a></li>
+     
+    	<li><a href="/tags#Schema-ref">Schema <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  
+    <hr>
+  
+  	<div class="sidebar-title"><i class="icon-fixed-width icon-file-text"></i> Related</div>
+    <ul>
+    
+    	<li><a href="/Blog/2015/04/16/cssanimation">CSS动画练习-大白和哆啦A梦</a></li>
+    
+    	<li><a href="/Blog/2013/12/19/html5canvas">Html5Canvas绘制时钟</a></li>
+    
+    	<li><a href="/Blog/2013/08/28/Get_IP">C#获取电脑的公网IP</a></li>
+    
+    </ul>
+    <hr>
+    <!-- Baidu Button BEGIN -->
+    <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=right&amp;uid=254497" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+    </script>
+    <!-- Baidu Button END -->  
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Liu Bing 2015 </p>
+      </footer>
+
+    </div> <!-- /container -->
+    
+
+
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb8e145711258e179270df3c5f1b3c84b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+  </body>
+</html>
+
