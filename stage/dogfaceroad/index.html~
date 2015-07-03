@@ -27,7 +27,7 @@ group: navigation
 	</div>
 </div>
 
-<link href="/assets/themes/twitter/css/downloadapp.css" rel="stylesheet">
+<link href="http://blogstroage.qiniudn.com/css/downloadapp.css" rel="stylesheet">
 <script type="text/javascript">
 var os = function() {
      var ua = navigator.userAgent,
