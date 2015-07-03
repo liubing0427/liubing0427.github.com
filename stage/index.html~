@@ -47,7 +47,7 @@ description: "刘兵的博客"
 			</ul>
 		</div>
 		<br>
-		<div class="sidebar-title"><i class="icon-fixed-width icon-file-text"></i> 标签</div>
+		<div class="sidebar-title"><i class="icon-fixed-width icon-file"></i> 标签</div>
 		<div>
 			<ul class="tag_box inline">
 			{% assign tags_list = site.tags %}  

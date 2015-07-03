@@ -1,0 +1,57 @@
+.callow {
+	position: absolute;
+	display: block;
+	-ms-filter: "alpha(opacity=80)";
+	filter: alpha(opacity=80);
+	background-color: rgba(255,255,255,0.8);
+	background: #fff\9;
+	box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
+	width: 390px;
+	height: 350px;
+	right: 20%;
+	top: 45px;
+	z-index: 102
+}
+
+.callow h1 {
+	height: 35px;
+	font-size: 30px;
+	margin: 25px 30px;
+	font-family: "Microsoft YaHei";
+	font-weight: 100;
+	color: #333
+}
+
+.callow .callow-sub {
+	height: 36px;
+	font-size: 14px;
+	margin: 0 30px 30px 30px;
+	display: inline-block;
+	color: #666
+}
+
+.callow .callow-pic {
+	margin: 0 30px
+}
+
+.callow .callow-dl,.callow .callow-qr {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline
+}
+
+.callow .callow-dl .dl-btn,.callow .callow-qr .dl-btn {
+	width: 178px;
+	height: 59px;
+	background: url('http://img02.taobaocdn.com/tps/i2/T1AD4FFk8XXXbY8tQk-178-168.png') no-repeat top left;
+	background-position: 0 0
+}
+
+.callow .callow-dl .dl-btn:hover,.callow .callow-qr .dl-btn:hover {
+	background-position: 0 -109px;
+	cursor: pointer
+}
+
+.callow .callow-qr img {
+	width: 130px
+}

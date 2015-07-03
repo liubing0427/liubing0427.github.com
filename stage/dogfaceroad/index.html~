@@ -1,0 +1,52 @@
+---
+layout: page
+title: Download
+header: Download App
+group: navigation
+---
+{% include JB/setup %}
+
+<div class="callow" style="text-align:left">
+	<h1><i class="icon-large icon-apple"></i> 小兵之路</h1>
+	<span class="callow-sub">
+	一个结合了三消，2048和军旗的神奇游戏！从小兵升级成司令，体验不一样的乐趣！
+	</span>
+	<div class="callow-pic">
+		<div class="callow-dl">
+			<div class="J_Md" id="downloadmore" data-md="http://log.mmstat.com/wap.11.1">
+			</div>
+			<div>
+				<img src="http://blogstroage.qiniudn.com/image/downloadtext.png">
+			</div>
+		</div>
+		<div class="callow-qr">
+
+			<img src="http://blogstroage.qiniudn.com/image/2wei.png" alt="">
+
+		</div>
+	</div>
+</div>
+
+<link href="/assets/themes/twitter/css/downloadapp.css" rel="stylesheet">
+<script type="text/javascript">
+var os = function() {
+     var ua = navigator.userAgent,
+     isWindowsPhone = /(?:Windows Phone)/.test(ua),
+     isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone, 
+     isAndroid = /(?:Android)/.test(ua), 
+     isFireFox = /(?:Firefox)/.test(ua), 
+     isChrome = /(?:Chrome|CriOS)/.test(ua),
+     isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+     isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+     isPc = !isPhone && !isAndroid && !isSymbian;
+     return {
+          isTablet: isTablet,
+          isPhone: isPhone,
+          isAndroid : isAndroid,
+          isPc : isPc
+     };
+}();
+if(os.isPhone){
+    location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+}
+</script>

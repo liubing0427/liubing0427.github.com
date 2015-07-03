@@ -1,15 +1,16 @@
 
 http://liubing0427.github.io/archive/index.html
 http://liubing0427.github.io/index.html
+http://liubing0427.github.io/dogfaceroad/index.html
 http://liubing0427.github.io/about/index.html
 http://liubing0427.github.io/tags/index.html
 http://liubing0427.github.io/messageboard/index.html
 http://liubing0427.github.io/atom.xml
 http://liubing0427.github.io/pages.html
 http://liubing0427.github.io/sitemap.txt
-http://liubing0427.github.io/index.html
 http://liubing0427.github.io/rss.xml
 http://liubing0427.github.io/categories/index.html
+http://liubing0427.github.io/app/index.html
 
 http://liubing0427.github.io/Blog/2015/04/16/cssanimation
 http://liubing0427.github.io/Blog/2013/12/19/html5canvas

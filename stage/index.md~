@@ -39,7 +39,7 @@ description: "刘兵的博客"
 
 <td width="30%" style="vertical-align:top;">
 	<div class="home-page-sidebar">
-		<div class="sidebar-title">文章分类</div>
+		<div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i>文章分类</div>
 		<div>
 			<ul class="tag_box inline">
 			{% assign categories_list = site.categories %}
@@ -47,7 +47,7 @@ description: "刘兵的博客"
 			</ul>
 		</div>
 		<br>
-		<div class="sidebar-title">标签</div>
+		<div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i>标签</div>
 		<div>
 			<ul class="tag_box inline">
 			{% assign tags_list = site.tags %}  
