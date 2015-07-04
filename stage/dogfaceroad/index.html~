@@ -16,18 +16,18 @@ group: navigation
 			<div class="J_Md" id="downloadmore" data-md="http://log.mmstat.com/wap.11.1">
 			</div>
 			<div>
-				<img src="http://blogstroage.qiniudn.com/image/downloadtext.png">
+				<img src="{{ ASSET_PATH }}/image/downloadtext.png">
 			</div>
 		</div>
 		<div class="callow-qr">
 
-			<img src="http://blogstroage.qiniudn.com/image/2wei.png" alt="">
+			<img src="{{ ASSET_PATH }}/image/2wei.png" alt="">
 
 		</div>
 	</div>
 </div>
 
-<link href="http://blogstroage.qiniudn.com/css/downloadapp.css" rel="stylesheet">
+<link href="{{ ASSET_PATH }}/css/downloadapp.css" rel="stylesheet">
 <script type="text/javascript">
 var os = function() {
      var ua = navigator.userAgent,
@@ -50,3 +50,6 @@ if(os.isPhone){
     location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
 }
 </script>
+<!-- Baidu Button BEGIN -->
+{% include JB/sharing %}
+<!-- Baidu Button END --> 
