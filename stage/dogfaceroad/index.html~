@@ -7,7 +7,7 @@ group: navigation
 {% include JB/setup %}
 
 <div class="callow" style="text-align:left">
-	<h1><i class="icon-large icon-apple"></i> 小兵之路</h1>
+	<h1>小兵之路</h1>
 	<span class="callow-sub">
 	一个结合了三消，2048和军旗的神奇游戏！从小兵升级成司令，体验不一样的乐趣！
 	</span>
@@ -25,9 +25,19 @@ group: navigation
 
 		</div>
 	</div>
+
+   <div class="downbtn"> 
+    <h3>下载到电脑</h3> 
+    <a href="https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893" target="_blank" class="OSbtn">
+	<h2><i class="icon-large icon-apple"></i> iPhone</h2>
+    </a> 
+    <a href="http://dd.myapp.com/16891/D7E48BED8286BD193CFC28AFF0865898.apk?fsname=com.Mechanohog.DogfaceRoad_1.0_1.apk&asr=8eff" target="_blank" class="OSbtn android">
+	<h2><i class="icon-large icon-android"></i> Android</h2>
+    </a> 
+   </div> 
 </div>
 
-<link href="{{ ASSET_PATH }}/css/downloadapp.css" rel="stylesheet">
+<link href="../assets/themes/twitter/css/downloadapp.css" rel="stylesheet">
 <script type="text/javascript">
 var os = function() {
      var ua = navigator.userAgent,
@@ -48,6 +58,9 @@ var os = function() {
 }();
 if(os.isPhone){
     location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+}
+else if(os.isAndroid){
+    location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
 }
 </script>
 <!-- Baidu Button BEGIN -->

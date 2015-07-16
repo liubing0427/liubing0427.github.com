@@ -1,5 +1,4 @@
 .callow {
-	position: absolute;
 	display: block;
 	-ms-filter: "alpha(opacity=80)";
 	filter: alpha(opacity=80);
@@ -8,9 +7,10 @@
 	box-shadow: 0 3px 3px 2px rgba(0,0,0,0.2);
 	width: 390px;
 	height: 350px;
-	right: 20%;
 	top: 45px;
-	z-index: 102
+	z-index: 102;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 
 .callow h1 {
@@ -54,4 +54,18 @@
 
 .callow .callow-qr img {
 	width: 130px
+}
+
+.downbtn{
+    display: block;
+    margin: 0 30px 25px 30px;
+}
+.downbtn .OSbtn{
+    display: block;
+    width: 130px;
+    height: 36px;
+    float: left;
+    text-decoration: none;
+}
+.downbtn .android{
 }
