@@ -1,5 +1,6 @@
 var flag = true;
 var index = -1;
+var oScript = null;
 window.onload = function ()
 { 
     var time = new Date();
@@ -23,6 +24,14 @@ window.onload = function ()
         if(oTxt.value=="")
         {
             document.getElementById("tr1").innerText = '';
+        }
+    });
+
+    $("#lst-ib").blur(function(){
+        var suglist = document.getElementById("suglist");
+        if ($(suglist))
+        {
+            $(suglist).hide();
         }
     });
     var sethfPos=sethfPos||0;
@@ -115,9 +124,7 @@ window.onload = function ()
 function getdata()
 {
     var oTxt = document.getElementById('lst-ib');
-    var oUl = document.getElementById('st');
-    var oScript = null ;
-    oUl.innerHTML = '' ;
+    $("#st").empty();
     //避免造成代码冗余，出现众多script标签（由于每输入一个字符，就会动态生成script标签，因此每次需要清除上一次遗留下的script标签）
     if(oScript)
     {
@@ -132,10 +139,27 @@ function getdata()
 //回调时调用的函数，将取得的联想词展示出来
 function baidu (json)
 {
+    $(".lst-d").focus();
     index = -1;
     var oUl = document.getElementById('st');
+    $("#st").empty();
     var suglist = document.createElement("ul");
     suglist.id = "suglist";
+    var css_index = $("#index");
+    var css_result = $("#css_result");
+    if(json.s.length == 0&&$(".lst").val()==""){
+        if(css_result.length){
+            css_result.remove();
+        }
+        if(!css_index.length){
+           css_index = document.createElement('link');
+           css_index.href = "css/search.css";
+           css_index.type = "text/css";
+           css_index.id = "index";
+           css_index.rel = "stylesheet";
+           document.body.appendChild(css_index);
+        }
+    }
     for (var i = 0; i < json.s.length; i++) {
         var sugli = document.createElement("li");
         sugli.innerHTML = json['s'][i];
@@ -143,12 +167,10 @@ function baidu (json)
         suglist.appendChild(sugli)
     }
     oUl.appendChild(suglist);
-
-    $(".li-cl").click(function(){
+    $(".li-cl").mousedown(function(){
         var li = $(this);
         $("#lst-ib").val(li.text());
         $(suglist).hide();
-        document.getElementById("btnK").click();
     });
 
     $(".li-cl").mouseover(function(){
@@ -176,23 +198,19 @@ document.onkeydown = function(e) {
     var suglist = document.getElementById("suglist");
     if(suglist){
         e = e || window.event;
-        if (e.keyCode == 9 || e.keyCode == 27) {
+        if (e.keyCode == 9 || e.keyCode == 27) {//Tab || Esc
             if ($(suglist))
             {
                 $(suglist).hide();
             }
-        } else if (e.keyCode == 13) {
+        } else if (e.keyCode == 13) {//Enter
             //me.addStat("rsv_sug2", 0);
-            if ($(suglist))
-            {
-                $(suglist).hide();
-            }
             document.getElementById("btnK").click();
             return false;
-        } else if (e.keyCode == 86 && e.ctrlKey) {
+        } else if (e.keyCode == 86 && e.ctrlKey) {//V+ctrl
             //me.addStat("rsv_n", 2)
         } else if ($(suglist)) {
-            if (e.keyCode == 38) {
+            if (e.keyCode == 38) {//up
                 flag = false;
                 e.preventDefault();
                 var n = $(suglist).find("li").length;
@@ -202,7 +220,7 @@ document.onkeydown = function(e) {
                 }
                 sIndex(index);
             }
-            if (e.keyCode == 40) {
+            if (e.keyCode == 40) {//down
                 flag = false;
                 e.preventDefault();
                 var n = $(suglist).find("li").length;
@@ -221,22 +239,43 @@ document.onkeydown = function(e) {
     }
 }
 
-function Show_Hidden(trid){
+function Show_Hidden(){
+    var suglist = $("#suglist");
+	if ($(suglist).length)
+	{
+		$(suglist).hide();
+	}
     if(document.getElementById("lst-ib").value!="")
     {
+        var css_index = $("#index");
+        var css_result = $("#css_result");
+        if(css_index.length){
+            css_index.remove();
+        }
+        if(!css_result.length){
+           css_result = document.createElement('link');
+           css_result.href = "css/result.css";
+           css_result.type = "text/css";
+           css_result.id = "css_result";
+           css_result.rel = "stylesheet";
+           document.body.appendChild(css_result);
+        }
         document.getElementById("tr1").innerText = '根据相关法律法规和政策，"'+document.getElementById("lst-ib").value+'"的搜索结果未予显示';
-        trid.style.display='block';
-        //window.location.assign("http://www.baidu.com/s?wd="+document.getElementById('lst-ib').value);
+        $("#tr1").css("display", "block");
     }
     else
     {
         document.getElementById("tr1").innerText = '';
-        trid.style.display='none';
+        $("#tr1").css("display", "none");
     }
 }
 
 function h(obj){
     obj.style.behavior='url(#default#homepage)';
     var a = obj.setHomePage('http://search.daoimpl.com/');
+}
+
+function getLuckly(){
+    window.location.href="http://www.daoimpl.com/app/";
 }
 

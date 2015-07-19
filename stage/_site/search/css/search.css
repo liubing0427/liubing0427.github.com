@@ -41,7 +41,9 @@ body,td,a,p,.h {
 	text-align: center;
 }
 
-.jhp input[type="submit"] {
+input[name="btnG"], input[name="btnI"] {
+	height: 29px;
+	line-height: 27px;
 	background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
 	background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
 	-webkit-border-radius: 2px;
@@ -50,22 +52,20 @@ body,td,a,p,.h {
 	background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
 	background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
 	border: 1px solid #dcdcdc;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 2px;
-	color: #666;
+	color: #444;
 	cursor: default;
 	font-family: arial,sans-serif;
 	font-size: 11px;
 	font-weight: bold;
-	height: 29px;
-	line-height: 27px;
-	margin: 11px 6px;
+	margin: 11px 8px;
 	min-width: 54px;
 	padding: 0 8px;
-	text-align: center
+	text-align: center;
 }
 
-.jhp input[type="submit"]:hover {
+input[name="btnG"]:hover, input[name="btnI"]:hover {
 	background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));
 	background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -74,10 +74,10 @@ body,td,a,p,.h {
 	background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1);
 	border: 1px solid #c6c6c6;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	color: #333
+	color: #222
 }
 
-.jhp input[type="submit"]:focus {
+input[name="btnG"]:focus, input[name="btnI"]:focus {
 	border: 1px solid #4d90fe;
 	outline: none
 }
@@ -127,14 +127,35 @@ h1,ol,ul,li {
 	border-color: #4d90fe!important;
 }
 
+.sbib_b {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  padding: 5px 9px 0;
+}
+
 .lst {
-	width: 97%;
+	position: relative;
+  	z-index: 1;
 	border: 0;
-	padding-left: 6px;
-	padding-right: 10px;
-	padding-top: 0!important;
-	margin-top: 4px;
-	margin-bottom: 0;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	cursor: auto;
+	font: 17px arial,sans-serif;
+	height: 1.2em !important;
+	text-rendering: auto;
+	color: initial;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	left: 0px;
+	outline: none;
 }
 
 .lst:focus {
@@ -148,7 +169,7 @@ h1,ol,ul,li {
 	background: #fff
 }
 
-button[name="btnG"],.tsf-p .lsb:active {
+.tsf-p .lsb:active {
 	background: transparent;
 	color: transparent;
 	font-size: 0;
@@ -181,15 +202,14 @@ input {
 .big.jhp .tsf-p {
 }
 
-#tr1 {
-	font-family: arial,sans-serif;
-	color: red;
-}
-
 #st{
-	margin:3px 0px 0px 0px;
-	position: absolute;
-	text-align: left;
+	position: relative;
+	width: 100%;
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 3px #ededed;
+	-moz-box-shadow: 1px 1px 3px #ededed;
+	-o-box-shadow: 1px 1px 3px #ededed;
+	z-index: 989;
 }
 
 li {
@@ -201,22 +221,19 @@ li.bdsug-s {
 	background:#ebebeb
 }
 
-#ftCon {
-	height: 100px;
-	position: absolute;
+#fbar {
+	font-family: arial, sans-serif;
+	font-size: 13px;
+	color: rgb(119, 119, 119);
+	cursor: pointer;
+	background: #f2f2f2;
+	border-top: 1px solid #e4e4e4;
+	min-width: 980px;
+	padding-top: 18px;
 	text-align: center;
-	bottom: 44px;
-	width: 100%;
-	margin: 0 auto;
-	z-index: 0;
-	overflow: hidden;
-	min-width: 720px;
-}
-
-#ftConw {
-	width: 720px;
-	margin: 0 auto;
-	font: 12px arial;
+	position: absolute;
+	bottom: 0px;
+	line-height: 40px;
 }
 
 #wrapper {
@@ -247,4 +264,67 @@ li.bdsug-s {
 	height: 231px; 
 	margin-top: 50px;
 	margin: 0 auto;
+}
+
+.sfbg {
+	display: none;
+}
+
+.logocont {
+	display: none;
+}
+
+.jsb {
+	padding-top: 2px;
+}
+
+.sbico {
+	display: none;
+}
+
+#appbar {
+	display: none;
+}
+
+#btnK {
+	display: none;
+}
+
+#suglist {
+	border: 1px solid #ccc;
+}
+
+.li-cl {  
+	line-height: 22px;
+  	overflow: hidden;
+	padding: 0 10px;
+}
+
+.mw {
+	display: none;
+}
+
+#hdtb {
+	display: none;
+}
+
+.below a {
+	color: #777;
+	cursor: auto;
+	font-family: arial, 宋体, 'Hiragino Sans GB', 'Microsoft Yahei', 微软雅黑, 宋体, Tahoma, Arial, Helvetica, STHeiti;
+	font-size: 12px;
+	margin-right: 12px;
+	text-align: center;
+	text-decoration: none;
+	word-spacing: 3px;
+	zoom: 1;
+}
+
+.below a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+#tr1 {
+	display: none;
 }
