@@ -25,7 +25,6 @@ group: navigation
 
 		</div>
 	</div>
-
    <div class="downbtn"> 
     <h3>下载到电脑</h3> 
     <a href="https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893" target="_blank" class="OSbtn">
@@ -56,8 +55,20 @@ var os = function() {
           isPc : isPc
      };
 }();
+function is_weixin(){
+	var ua = navigator.userAgent.toLowerCase();
+	if(ua.match(/MicroMessenger/i)=="micromessenger") {
+		return true;
+ 	} else {
+		return false;
+	}
+}
 if(os.isPhone){
-    location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+    if(is_weixin()) {
+        location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
+    } else {
+        location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+    }
 }
 else if(os.isAndroid){
     location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
