@@ -63,34 +63,9 @@ function is_weixin(){
 		return false;
 	}
 }
-var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight: document.documentElement.clientHeight;
-function loadHtml() {
-    var div = document.createElement('div');
-    div.id = 'weixin-tip';
-    div.innerHTML = '<p class="weixin-img"><img src="http://blogstroage.qiniudn.com/image/live_weixin.png" alt="微信打开"/></p>';
-    document.body.appendChild(div);
-}
-
-function loadStyleText(cssText) {
-    var style = document.createElement('style');
-    style.rel = 'stylesheet';
-    style.type = 'text/css';
-    try {
-        style.appendChild(document.createTextNode(cssText));
-    } catch(e) {
-        style.styleSheet.cssText = cssText; //ie9以下
-    }
-    var head = document.getElementsByTagName("head")[0]; //head标签之间加上style样式
-    head.appendChild(style);
-}
-var cssText = ".weixin-img img {max-width: 100%; height: auto;} #weixin-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}";
 if(os.isPhone){
     if(is_weixin()) {
-	loadHtml();
-	loadStyleText(cssText);
-	var tip = document.getElementById('weixin-tip');
-	tip.style.height = winHeight + 'px'; //兼容IOS弹窗整屏
-	tip.style.display = 'block';
+        location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
     } else {
         location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
     }
