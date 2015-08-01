@@ -83,7 +83,12 @@
 
 		</div>
 	</div>
-
+	
+	<div class="weixin-tip" style="display: none; position: fixed; left:0; top:0; bottom:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80);  height: 100%; width: 100%; z-index: 100;">
+		<p style="text-align: center; margin-top: 10%; padding:0 5%;">
+			<img src="live_weixin.png" alt="微信打开" style="max-width: 100%; height: auto;"/>
+		</p>
+	</div>
    <div class="downbtn"> 
     <h3>下载到电脑</h3> 
     <a href="https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893" target="_blank" class="OSbtn">
@@ -114,8 +119,22 @@ var os = function() {
           isPc : isPc
      };
 }();
-if(os.isPhone){
-    location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+function is_weixin() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+if(os.isPhone){ 
+    if(is_weixin()) {
+	var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+	$(".weixin-tip").css("height",winHeight);
+	$(".weixin-tip").show();
+    } else {   
+        location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+    }
 }
 else if(os.isAndroid){
     location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
