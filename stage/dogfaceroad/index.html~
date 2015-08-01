@@ -28,7 +28,7 @@ group: navigation
 	
 	<div class="weixin-tip" style="display: none; position: fixed; left:0; top:0; bottom:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80);  height: 100%; width: 100%; z-index: 100;">
 		<p style="text-align: center; margin-top: 10%; padding:0 5%;">
-			<img src="live_weixin.png" alt="微信打开" style="max-width: 100%; height: auto;"/>
+			<img src="http://blogstroage.qiniudn.com/image/live_weixin.png" alt="微信打开" style="max-width: 100%; height: auto;"/>
 		</p>
 	</div>
    <div class="downbtn"> 
@@ -71,6 +71,7 @@ function is_weixin() {
 }
 if(os.isPhone){ 
     if(is_weixin()) {
+	var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
 	$(".weixin-tip").css("height",winHeight);
 	$(".weixin-tip").show();
     } else {   
