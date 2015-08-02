@@ -70,14 +70,14 @@ function is_weixin() {
         return false;
     }
 }
-if(is_weixin()) {
-    $(".weixin-tip").hide();
-}
-if(os.isPhone){  
-    location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
-}
-else if(os.isAndroid){
-    location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
+if(!is_weixin()) {
+    	$(".weixin-tip").hide();
+	if(os.isPhone){  
+	    location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
+	}
+	else if(os.isAndroid){
+	    location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
+	}
 }
 </script>
 <!-- Baidu Button BEGIN -->
