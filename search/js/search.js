@@ -153,7 +153,7 @@ function baidu (json)
         }
         if(!css_index.length){
            css_index = document.createElement('link');
-           css_index.href = "http://blogstroage.qiniudn.com/css/search.css";
+           css_index.href = "http://7d9pos.com1.z0.glb.clouddn.com/css/search.css";
            css_index.type = "text/css";
            css_index.id = "index";
            css_index.rel = "stylesheet";
@@ -254,7 +254,7 @@ function Show_Hidden(){
         }
         if(!css_result.length){
            css_result = document.createElement('link');
-           css_result.href = "http://blogstroage.qiniudn.com/css/result.css";
+           css_result.href = "http://7d9pos.com1.z0.glb.clouddn.com/css/result.css";
            css_result.type = "text/css";
            css_result.id = "css_result";
            css_result.rel = "stylesheet";
