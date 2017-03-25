@@ -6,5 +6,7 @@ category: Html5
 tags: [Html5,Canvas]
 ---
 {% include JB/setup %}
-<canvas id="canvas" width="200" height="200"></canvas>
-<script src="/assets/javascript/clock.js"></script>
+<div class="text-center">
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script src="/assets/javascript/clock.js"></script>
+</div>

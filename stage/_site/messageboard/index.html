@@ -1,118 +1,148 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="baidu_union_verify" content="dafe71a3b0ba246dbd433cb490d3310d">
-    <meta name="google-site-verification" content="mw1KOVgTAORcoHehGDB5jnRa3xBuNuwCTXVqSvxyqBI" />
-    <meta name="msvalidate.01" content="4DC3638736C584D35FE2CB969B115974" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="baidu_union_verify" content="dafe71a3b0ba246dbd433cb490d3310d"/>
+    <meta name="google-site-verification" content="mw1KOVgTAORcoHehGDB5jnRa3xBuNuwCTXVqSvxyqBI"/>
+    <meta name="msvalidate.01" content="4DC3638736C584D35FE2CB969B115974"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
     <title>Message Board</title>
-    <meta name="description" content="">
-    <meta name="author" content="Liu Bing">
+</head>
+<body>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<meta name="description" content="刘兵的博客"/>
 
-    <!-- Le styles -->
-    <link href="http://7d9pos.com1.z0.glb.clouddn.com/css/bootstrap.css" rel="stylesheet">
-    <link href="http://7d9pos.com1.z0.glb.clouddn.com/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="http://7d9pos.com1.z0.glb.clouddn.com/css/pygments.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="http://7d9pos.com1.z0.glb.clouddn.com/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
-  </head>
-  <body>
-    <header id="header">
-      <div class="topbar">
-        <div class="fill">
-          <div class="container">
-            <a class="brand" href="/">
-    	       <b class="brand__forename">Bing's</b>
-             <b class="brand__surname">Blog</b>
-            </a>
-            <ul class="nav">
-              <li><a href="/about"><i class="icon-large icon-user"></i><b class="title_name"> About Me</b></a></li>
-              <li><a href="/archive"><i class="icon-large icon-th-list"></i><b class="title_name"> Archive</b></a></li>
-              <li><a href="/categories"><i class="icon-large icon-folder-open"></i><b class="title_name"> Categories</b></a></li>
-              <li><a href="/tags"><i class="icon-large icon-tags"></i><b class="title_name"> Tags</b></a></li>
-              <li><a href="/app"><i class="icon-large icon-th-large"></i><b class="title_name"> App</b></a></li>
-              <li><a href="/messageboard"><i class="icon-large icon-comment"></i><b class="title_name"> Message Board</b></a></li>
-            </ul>
-            <a class="rss_feed" href="/atom.xml"><i class="icon-2x icon-rss"></i></a>
-          </div>
-        </div>
-      </div>
-    </header>
+<meta name="author" content="Liu Bing"/>
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- Le styles -->
+<link href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all"/>
+<link href="http://7d9pos.com1.z0.glb.clouddn.com/css/pygments.css?body=1" rel="stylesheet" type="text/css" media="all"/>
+<link href="http://7d9pos.com1.z0.glb.clouddn.com/Font-Awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- Le fav and touch icons -->
+<!-- Update these with your own images
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+-->
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-
-      <div class="content">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <b class="brand__forename">Bing's</b>
+                <b class="brand__surname">Blog</b>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+                <li><a href="/archive"><i class="icon-large icon-th-list"></i><b class="title_name"> Archive</b></a>
+                </li>
+                <!--<li><a href="/categories"><i class="icon-large icon-folder-open"></i><b class="title_name">
+                    Categories</b></a></li>
+                <li><a href="/tags"><i class="icon-large icon-tags"></i><b class="title_name"> Tags</b></a></li>-->
+                <li><a href="/app"><i class="icon-large icon-th-large"></i><b class="title_name"> App</b></a></li>
+                <li><a href="/about"><i class="icon-large icon-user"></i><b class="title_name"> About Me</b></a>
+                </li>
+                <li><a href="/messageboard"><i class="icon-large icon-comment"></i><b class="title_name"> Message Board</b></a></li>
+                <li><a class="rss_feed" href="/atom.xml"><i class="icon-large icon-rss"></i><b class="title_name"> Rss</b></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
         
 <div class="page-header">
   <h1>Message Board <span class="signature">写不出来的只有自己知道，写出来的不说你也知道:）</span></h1>
 </div>
 
-<div class="row">
-  <div class="span14">
-    
-<div class="span10">
-<hr />
-
-<h2 id='id1'>欢迎来到我的博客.</h2>
-
-<h2 id='id2'>如果你有任何问题或建议可以在这里给我留言.</h2>
-
-<h2 id='id3'>You can leave messages to me if you have any suggestions or questions.</h2>
-
-<hr />
 
 
+<main class="col-md-12 main-content">
+    <div class="post page">
+        <div class="d-block">
+            <p title="Welcome to my blog.">欢迎来到我的博客.</p>
+            <p title="You can leave messages to me if you have any suggestions or questions.">如果你有任何问题或建议可以在这里给我留言.</p>
+            <hr/>
+            <p title="If the comment box can not be displayed, add the following configuration information to the host file.">如果无法显示评论框,请将下面的配置信息添加到host文件中.</p>
+            <div class="white-code">
+                <figure class="highlight"><pre><code class="language-c" data-lang="c"><span></span>                <span class="cp"># Disqus Start</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">www</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">content</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">referrer</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">docs</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">dropbox</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>	<span class="n">apkpure</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.64</span>	<span class="n">glitter</span><span class="p">.</span><span class="n">services</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.64</span>	<span class="n">links</span><span class="p">.</span><span class="n">services</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">173.192.82.196</span>	<span class="n">realtime</span><span class="p">.</span><span class="n">services</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">50.18.249.249</span>	<span class="n">help</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">23.65.183.218</span>	<span class="n">about</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">23.65.183.218</span>	<span class="n">blog</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">23.65.183.218</span>	<span class="n">publishers</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="mf">151.101.100.134</span>  <span class="n">daoimpl</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
+                <span class="cp"># Disqus End</span>
+                </code></pre></figure>
+            </div>
+        </div>
+        
 
 
-  <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/messageboard/index.html" data-title="Message Board"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <div id="disqus_thread"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"daoimpl"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-
-
-
-
-
-</div>
-
-  </div>
-</div>
-
-
-      </div>
-
-      <footer>
-        <p>&copy; Liu Bing 2016 </p>
-      </footer>
-
-    </div> <!-- /container -->
+    var disqus_developer = 1;
+    var disqus_shortname = 'daoimpl'; // required: replace example with your forum shortname
     
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+    </div>
+</main>
+
+
+
+    </div>
+</div>
+<!-- /container -->
+<footer class="footer ">
+    <div class="container">
+        <hr>
+        <div class="row footer-bottom">
+            <ul class="list-inline text-center">
+                <li><p>&copy; Liu Bing 2017 </p></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 
   <script type="text/javascript">
@@ -124,6 +154,6 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 
 
-  </body>
+</body>
 </html>
 

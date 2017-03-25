@@ -8,9 +8,11 @@
     <meta name="msvalidate.01" content="4DC3638736C584D35FE2CB969B115974"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="shortcut icon" href="/images/favicon.ico"/>
-    <title>Download</title>
+    <title>C#获取电脑的公网IP</title>
 </head>
 <body>
+
+<meta name="description" content="使用C# WebClient联网获取内网电脑的公网IP"/>
 
 <meta name="author" content="Liu Bing"/>
 <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -65,89 +67,95 @@
     <div class="row">
         
 <div class="page-header">
-  <h1>Download <span class="signature">写不出来的只有自己知道，写出来的不说你也知道:）</span></h1>
+    <h1>
+        [<a href="/categories#程序-ref">程序</a>] C#获取电脑的公网IP
+        <small>-- 28 August 2013 </small>
+    </h1>
 </div>
 
+<div class="col-md-8 main-content">
+    <div class="post page">
+        
+<p>使用WebClient访问可以获取IP的网站,通过正则表达式抓取页面中的IP.<p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span></span><span class="n">WebClient</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WebClient</span><span class="p">();</span>
+<span class="kt">byte</span><span class="p">[]</span> <span class="n">bytRecv</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="n">DownloadData</span><span class="p">(</span> <span class="s">&quot;http://get-ip.me/&quot;</span><span class="p">);</span><span class="c1">//下载网页数据</span>
+<span class="kt">string</span> <span class="n">str</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">bytRecv</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">r</span> <span class="p">=</span> <span class="s">@&quot;((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))&quot;</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">ip</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">RegularExpressions</span><span class="p">.</span><span class="n">Regex</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">r</span><span class="p">).</span><span class="n">ToString</span><span class="p">();</span><span class="c1">//提取信息 </span></code></pre></figure>
+
+</p></p>
+
+    </div>
+    <div class="text-center">
+        <div class="pagination">
+            <ul>
+                
+                <li class="prev disabled"><a><i class="icon-fixed-width icon-arrow-left"></i> Previous</a></li>
+                
+                <li><a href="/archive">Archive</a></li>
+                
+                <li class="next"><a href="/Blog/2013/11/27/sql" title="一些有用的Sql语句"><i class="icon-fixed-width icon-arrow-right"></i> Next</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="comments">
+        
 
 
-<div class="callow" style="text-align:left">
-	<h1>小兵之路</h1>
-	<span class="callow-sub">
-	一个结合了三消，2048和军旗的神奇游戏！从小兵升级成司令，体验不一样的乐趣！
-	</span>
-	<div class="callow-pic">
-		<div class="callow-dl">
-			<div class="J_Md" id="downloadmore" data-md="http://log.mmstat.com/wap.11.1">
-			</div>
-			<div>
-				<img src="http://7d9pos.com1.z0.glb.clouddn.com/image/downloadtext.png">
-			</div>
-		</div>
-		<div class="callow-qr">
-
-			<img src="http://7d9pos.com1.z0.glb.clouddn.com/image/2wei.png" alt="">
-
-		</div>
-	</div>
-	
-	<div class="weixin-tip">
-		<p class="weixin-p">
-			<img src="http://7d9pos.com1.z0.glb.clouddn.com/image/live_weixin.png" alt=""/>
-		</p>
-	</div>
-   <div class="downbtn"> 
-    <h3>下载到电脑</h3> 
-    <a href="https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893" target="_blank" class="OSbtn">
-	<h2><i class="icon-large icon-apple"></i> iPhone</h2>
-    </a> 
-    <a href="http://dd.myapp.com/16891/D7E48BED8286BD193CFC28AFF0865898.apk?fsname=%E5%B0%8F%E5%85%B5%E4%B9%8B%E8%B7%AF.apk&asr=8eff" target="_blank" class="OSbtn android">
-	<h2><i class="icon-large icon-android"></i> Android</h2>
-    </a> 
-   </div> 
-</div>
-
-<link href="http://7d9pos.com1.z0.glb.clouddn.com/css/downloadapp.css" rel="stylesheet">
-<script type="text/javascript" src="http://7d9pos.com1.z0.glb.clouddn.com/js/jquery-2.0.2.min.js"></script>
+  <div id="disqus_thread"></div>
 <script type="text/javascript">
-var os = function() {
-     var ua = navigator.userAgent,
-     isWindowsPhone = /(?:Windows Phone)/.test(ua),
-     isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone, 
-     isAndroid = /(?:Android)/.test(ua), 
-     isFireFox = /(?:Firefox)/.test(ua), 
-     isChrome = /(?:Chrome|CriOS)/.test(ua),
-     isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
-     isPhone = /(?:iPhone)/.test(ua) && !isTablet,
-     isPc = !isPhone && !isAndroid && !isSymbian;
-     return {
-          isTablet: isTablet,
-          isPhone: isPhone,
-          isAndroid : isAndroid,
-          isPc : isPc
-     };
-}();
-function is_weixin() {
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.match(/MicroMessenger/i) == "micromessenger") {
-        return true;
-    } else {
-        return false;
-    }
-}
-if(!is_weixin()) {
-    	$(".weixin-tip").hide();
-	if(os.isPhone){  
-	    location.replace('https://itunes.apple.com/cn/app/xiao-bing-zhi-lu/id1005572893');
-	}
-	else if(os.isAndroid){
-	    location.replace('http://a.app.qq.com/o/simple.jsp?pkgname=com.Mechanohog.DogfaceRoad');
-	}
-}
-else{
-}
+    var disqus_developer = 1;
+    var disqus_shortname = 'daoimpl'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
-<!-- Baidu Button BEGIN -->
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
+
+
+
+
+    </div>
+</div>
+<div class="col-md-4 sidebar">
+    <div class="widget">
+        
+        <div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i> Tags</div>
+        <ul class="tag_box inline">
+            
+            
+
+
+  
+     
+    	<li><a href="/tags#c#-ref">c# <span>1</span></a></li>
+     
+    	<li><a href="/tags#IP-ref">IP <span>1</span></a></li>
+    
+  
+
+
+
+        </ul>
+        
+    </div>
+
+    <div class="widget">
+        <div class="sidebar-title"><i class="icon-fixed-width icon-file-text"></i> Related</div>
+        <ul>
+            
+        </ul>
+    </div>
+    <!-- Baidu Button BEGIN -->
+    
 
 
   <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=right&amp;uid=254497" ></script>
@@ -160,8 +168,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
 
 
-<!-- Baidu Button END --> 
-
+    <!-- Baidu Button END -->
+</div>
 
 
     </div>

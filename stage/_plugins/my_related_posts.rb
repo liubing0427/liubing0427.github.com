@@ -1,9 +1,6 @@
-require 'jekyll/post'
+require 'jekyll/document'
 
-## refer to https://github.com/LawrenceWoodman/related_posts-jekyll_plugin
-## calculate the correlation by tags and categories
-
-module RelatedPostsModule
+module BetterRelatedPosts
 
   # Used to remove #related_posts so that it can be overridden
   def self.included(klass)
@@ -15,28 +12,36 @@ module RelatedPostsModule
   # Calculate related posts.
   #
   # Returns [<Post>]
-  def related_posts(posts)
+  def related_posts
+  	posts = site.posts.docs
     return [] unless posts.size > 1
-    
+    highest_freq = Jekyll::Document.tag_freq(posts).values.max
     related_scores = Hash.new(0)
     posts.each do |post|
-     if post != self
-         related_scores[post] = 0
-         
-       post.tags.each do |tag| 
-         if self.tags.include?(tag)
-             related_scores[post] += 2
-           end     
-       end
-       
-     end
+      post.data["tags"].each do |tag|
+        if self.data["tags"].include?(tag) && post != self
+          cat_freq = Jekyll::Document.tag_freq(posts)[tag]
+          related_scores[post] += (1+highest_freq-cat_freq)
+        end
+      end
     end
 
-    Jekyll::Post.sort_related_posts(related_scores)
-    
+    Jekyll::Document.sort_related_posts(related_scores)
   end
 
   module ClassMethods
+    # Calculate the frequency of each tag.
+    #
+    # Returns {tag => freq, tag => freq, ...}
+    def tag_freq(posts)
+      return @tag_freq if @tag_freq
+      @tag_freq = Hash.new(0)
+      posts.each do |post|
+        post.data["tags"].each {|tag| @tag_freq[tag] += 1}
+      end
+      @tag_freq
+    end
+
     # Sort the related posts in order of their score and date
     # and return just the posts
     def sort_related_posts(related_scores)
@@ -55,8 +60,9 @@ module RelatedPostsModule
 end
 
 module Jekyll
-  class Post
-    include RelatedPostsModule
-    extend RelatedPostsModule::ClassMethods
+  class Document
+    include BetterRelatedPosts
+    extend BetterRelatedPosts::ClassMethods
   end
 end
+

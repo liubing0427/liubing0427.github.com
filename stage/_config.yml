@@ -3,8 +3,7 @@
 permalink: /Blog/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
-pygments: true
+highlighter: pygments
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -73,15 +72,15 @@ JB :
   archive_path: /archive
   categories_path : /categories
   tags_path : /tags
-  #atom_path : /atom.xml
-  #rss_path : /rss.xml
+  atom_path : /atom.xml
+  rss_path : /rss.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : duoshuo
+    provider : disqus
     disqus :
       short_name : daoimpl
    #livefyre :

@@ -6,23 +6,28 @@ category: CSS
 tags: [CSS,Animation,大白,哆啦A梦]
 ---
 {% include JB/setup %}
-侧面行走的[大白](https://jsfiddle.net/rubatong/2oyLc2av/embedded/result/)
+<div class="cssanimation">
+<p>侧面行走的<a href="https://jsfiddle.net/rubatong/2oyLc2av/embedded/result/">大白</a></p>
 
 
-<canvas id="buymax" height="0"/>
+<script async src="//fiddle.jshell.net/2oyLc2av/3/embed/html,css,result/"></script>
 
 
->修改自[sparrow tian](http://www.zhihu.com/people/sparrow-tian)的[怎样才能做一个大白？](http://zhi.hu/h2wo)
+<blockquote>
+  <p>修改自<a href="http://www.zhihu.com/people/sparrow-tian">sparrow tian</a>的<a href="http://zhi.hu/h2wo">怎样才能做一个大白？</a></p>
+</blockquote>
 
-挥舞胳膊的[哆啦a梦](https://jsfiddle.net/rubatong/99j0zc2d/6/embedded/result/),鼠标移到头部会变笑脸
+<p>挥舞胳膊的<a href="https://jsfiddle.net/rubatong/99j0zc2d/6/embedded/result/">哆啦a梦</a>,鼠标移到头部会变笑脸</p>
 
 
-<canvas id="duola" height="0"/>
+<script async src="//jsfiddle.net/rubatong/99j0zc2d/9/embed/"></script>
 
 
->修改自[Pure CSS Design](http://purecss3.net/doraemon/doraemon_css3.html),需翻墙访问,国内查看[地址](http://mijiale.me/dora.html)
+<blockquote>
+  <p>修改自<a href="http://purecss3.net/doraemon/doraemon_css3.html">Pure CSS Design</a>,需翻墙访问,国内查看<a href="http://mijiale.me/dora.html">地址</a></p>
+</blockquote>
 
 已在IE、Chrome下验证
 
 <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
-<script src="/assets/javascript/buymax.js"></script>
+</div>
