@@ -12,6 +12,7 @@ http://liubing0427.github.io/pages
 http://liubing0427.github.io/rss.xml
 http://liubing0427.github.io/sitemap.txt
 
+http://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one
 http://liubing0427.github.io/Blog/2015/04/16/cssanimation
 http://liubing0427.github.io/Blog/2013/12/19/html5canvas
 http://liubing0427.github.io/Blog/2013/11/27/sql
