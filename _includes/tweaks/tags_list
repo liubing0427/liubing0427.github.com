@@ -1,0 +1,7 @@
+<div class="sidebar-title"><a href="{{ site.JB.tags_path }}"><i class="icon-fixed-width icon-tags"></i> Tags</a></div>
+<div>
+    <ul class="tag_box inline">
+    {% assign tags_list = site.tags %}  
+    {% include JB/tags_list %}
+    </ul>
+</div>

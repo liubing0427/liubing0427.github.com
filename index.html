@@ -1,194 +1,38 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="baidu_union_verify" content="dafe71a3b0ba246dbd433cb490d3310d"/>
-    <meta name="google-site-verification" content="mw1KOVgTAORcoHehGDB5jnRa3xBuNuwCTXVqSvxyqBI"/>
-    <meta name="msvalidate.01" content="4DC3638736C584D35FE2CB969B115974"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="shortcut icon" href="/images/favicon.ico"/>
-    <title>Bing's Blog</title>
-</head>
-<body>
-
-<meta name="description" content="刘兵的博客"/>
-
-<meta name="author" content="Liu Bing"/>
-<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<!-- Le styles -->
-<link href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all"/>
-<link href="http://7d9pos.com1.z0.glb.clouddn.com/css/pygments.css?body=1" rel="stylesheet" type="text/css" media="all"/>
-<link href="http://7d9pos.com1.z0.glb.clouddn.com/Font-Awesome/css/font-awesome.min.css" rel="stylesheet"/>
-<!-- Le fav and touch icons -->
-<!-- Update these with your own images
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
--->
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar-collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">
-                <b class="brand__forename">Bing's</b>
-                <b class="brand__surname">Blog</b>
-            </a>
-        </div>
-        <div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav">
-                <li><a href="/archive"><i class="icon-large icon-th-list"></i><b class="title_name"> Archive</b></a>
-                </li>
-                <!--<li><a href="/categories"><i class="icon-large icon-folder-open"></i><b class="title_name">
-                    Categories</b></a></li>
-                <li><a href="/tags"><i class="icon-large icon-tags"></i><b class="title_name"> Tags</b></a></li>-->
-                <li><a href="/app"><i class="icon-large icon-th-large"></i><b class="title_name"> App</b></a></li>
-                <li><a href="/about"><i class="icon-large icon-user"></i><b class="title_name"> About Me</b></a>
-                </li>
-                <li><a href="/messageboard"><i class="icon-large icon-comment"></i><b class="title_name"> Message Board</b></a></li>
-                <li><a class="rss_feed" href="/atom.xml"><i class="icon-large icon-rss"></i><b class="title_name"> Rss</b></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="container">
-    <div class="row">
-        
-<div class="page-header">
-  <h1>Bing's Blog <span class="signature">写不出来的只有自己知道，写出来的不说你也知道:）</span></h1>
-</div>
-
-
+---
+layout: page
+title: Bing's Blog
+description: "刘兵的博客"
+---
+{% include JB/setup %}
 
 <main class="col-md-8 main-content">
-    
+    {% for post in site.posts limit:5 %}
     <div class="home-page-post">
         <div class="post-header">
-            <div class="date">26 Mar 2017</div>
+            <div class="date">{{ post.date | date_to_string }}</div>
             <div class="tags">
-                <label>Tags: </label>VBA and Excel
+                <label>Tags: </label>{{ post.tags | array_to_sentence_string }}
             </div>
             <div class="category">
                 <label>Category: </label>
-                <span>Excel</span>
+                <span>{{ post.category }}</span>
             </div>
         </div>
         <div class="post-content">
-            <div class="title"><a href="/Blog/2017/03/26/merge-multiple-excel-documents-into-one">使用VBA将多个excel文档合并成一个excel</a></div>
-            <div class="abstract"><p>使用VBA将多个excel文档按row和column两种方式合并成一个excel</p>
-</div>
-            
-            <div style="float:right;"><a href="/Blog/2017/03/26/merge-multiple-excel-documents-into-one">阅读全文</a></div>
+            <div class="title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></div>
+            <div class="abstract">{{ post.description | markdownify }}</div>
+            {% if post.figure %}
+            <a href="{{post.url}}"><img src="{{post.figure}}"/></a>
+            {% endif %}
+            <div style="float:right;"><a href="{{ BASE_PATH }}{{ post.url }}">阅读全文</a></div>
         </div>
-        
+        {% if forloop.index != 5 %}
         <div class="post-footer">&nbsp;</div>
-        
+        {% endif %}
     </div>
-    
-    <div class="home-page-post">
-        <div class="post-header">
-            <div class="date">16 Apr 2015</div>
-            <div class="tags">
-                <label>Tags: </label>CSS, Animation, 大白, and 哆啦A梦
-            </div>
-            <div class="category">
-                <label>Category: </label>
-                <span>CSS</span>
-            </div>
-        </div>
-        <div class="post-content">
-            <div class="title"><a href="/Blog/2015/04/16/cssanimation">CSS动画练习-大白和哆啦A梦</a></div>
-            <div class="abstract"><p>利用纯CSS实现会动的大白和哆啦A梦</p>
-</div>
-            
-            <div style="float:right;"><a href="/Blog/2015/04/16/cssanimation">阅读全文</a></div>
-        </div>
-        
-        <div class="post-footer">&nbsp;</div>
-        
-    </div>
-    
-    <div class="home-page-post">
-        <div class="post-header">
-            <div class="date">19 Dec 2013</div>
-            <div class="tags">
-                <label>Tags: </label>Html5 and Canvas
-            </div>
-            <div class="category">
-                <label>Category: </label>
-                <span>Html5</span>
-            </div>
-        </div>
-        <div class="post-content">
-            <div class="title"><a href="/Blog/2013/12/19/html5canvas">Html5Canvas绘制时钟</a></div>
-            <div class="abstract"><p>html5 canvas通过javascript绘制漂亮的时钟.</p>
-</div>
-            
-            <div style="float:right;"><a href="/Blog/2013/12/19/html5canvas">阅读全文</a></div>
-        </div>
-        
-        <div class="post-footer">&nbsp;</div>
-        
-    </div>
-    
-    <div class="home-page-post">
-        <div class="post-header">
-            <div class="date">27 Nov 2013</div>
-            <div class="tags">
-                <label>Tags: </label>Sql, Sql Server, Trigger, Procedure, and Schema
-            </div>
-            <div class="category">
-                <label>Category: </label>
-                <span>Sql</span>
-            </div>
-        </div>
-        <div class="post-content">
-            <div class="title"><a href="/Blog/2013/11/27/sql">一些有用的Sql语句</a></div>
-            <div class="abstract"><p>删除DB所有的Trigger、Procedure、Schema，查询整个DB指定schema哪一列含有特定值</p>
-</div>
-            
-            <div style="float:right;"><a href="/Blog/2013/11/27/sql">阅读全文</a></div>
-        </div>
-        
-        <div class="post-footer">&nbsp;</div>
-        
-    </div>
-    
-    <div class="home-page-post">
-        <div class="post-header">
-            <div class="date">28 Aug 2013</div>
-            <div class="tags">
-                <label>Tags: </label>c# and IP
-            </div>
-            <div class="category">
-                <label>Category: </label>
-                <span>程序</span>
-            </div>
-        </div>
-        <div class="post-content">
-            <div class="title"><a href="/Blog/2013/08/28/Get_IP">C#获取电脑的公网IP</a></div>
-            <div class="abstract"><p>使用C# WebClient联网获取内网电脑的公网IP</p>
-</div>
-            
-            <div style="float:right;"><a href="/Blog/2013/08/28/Get_IP">阅读全文</a></div>
-        </div>
-        
-    </div>
-    
+    {% endfor %}
     <div class="allpost">
-        <a href="/archive">查看所有5篇文章...</a>
+        <a href="/archive">查看所有{{site.posts.size}}篇文章...</a>
     </div>
 </main>
 
@@ -197,35 +41,8 @@
         <div class="sidebar-title"><i class="icon-fixed-width icon-tags"></i> 文章分类</div>
         <div>
             <ul class="tag_box inline">
-                
-                
-
-
-  
-     
-    	<li><a href="/categories#程序-ref">
-    		程序 <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories#Sql-ref">
-    		Sql <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories#Html5-ref">
-    		Html5 <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories#CSS-ref">
-    		CSS <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories#Excel-ref">
-    		Excel <span>1</span>
-    	</a></li>
-    
-  
-
-
+                {% assign categories_list = site.categories %}
+                {% include JB/categories_list %}
             </ul>
         </div>
     </div>
@@ -234,83 +51,12 @@
         <div class="sidebar-title"><i class="icon-fixed-width icon-file-text"></i> 标签</div>
         <div>
             <ul class="tag_box inline">
-                
-                
-
-
-  
-     
-    	<li><a href="/tags#c#-ref">c# <span>1</span></a></li>
-     
-    	<li><a href="/tags#IP-ref">IP <span>1</span></a></li>
-     
-    	<li><a href="/tags#Sql-ref">Sql <span>1</span></a></li>
-     
-    	<li><a href="/tags#Sql Server-ref">Sql Server <span>1</span></a></li>
-     
-    	<li><a href="/tags#Trigger-ref">Trigger <span>1</span></a></li>
-     
-    	<li><a href="/tags#Procedure-ref">Procedure <span>1</span></a></li>
-     
-    	<li><a href="/tags#Schema-ref">Schema <span>1</span></a></li>
-     
-    	<li><a href="/tags#Html5-ref">Html5 <span>1</span></a></li>
-     
-    	<li><a href="/tags#Canvas-ref">Canvas <span>1</span></a></li>
-     
-    	<li><a href="/tags#CSS-ref">CSS <span>1</span></a></li>
-     
-    	<li><a href="/tags#Animation-ref">Animation <span>1</span></a></li>
-     
-    	<li><a href="/tags#大白-ref">大白 <span>1</span></a></li>
-     
-    	<li><a href="/tags#哆啦A梦-ref">哆啦A梦 <span>1</span></a></li>
-     
-    	<li><a href="/tags#VBA-ref">VBA <span>1</span></a></li>
-     
-    	<li><a href="/tags#Excel-ref">Excel <span>1</span></a></li>
-    
-  
-
-
-
+                {% assign tags_list = site.tags %}
+                {% include JB/tags_list %}
             </ul>
         </div>
     </div>
 </aside>
 
 
-
-
-
-
-    </div>
-</div>
-<!-- /container -->
-<footer class="footer ">
-    <div class="container">
-        <hr>
-        <div class="row footer-bottom">
-            <ul class="list-inline text-center">
-                <li><p>&copy; Liu Bing 2017 </p></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-
-  <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb8e145711258e179270df3c5f1b3c84b' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
-
-
-
-
-</body>
-</html>
 
