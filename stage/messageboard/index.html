@@ -5,35 +5,17 @@ description: "刘兵的博客"
 ---
 {% include JB/setup %}
 
-<main class="col-md-12 main-content">
+<main class="col-md-8 main-content">
     <div class="post page">
         <div class="d-block">
             <p title="Welcome to my blog.">欢迎来到我的博客.</p>
             <p title="You can leave messages to me if you have any suggestions or questions.">如果你有任何问题或建议可以在这里给我留言.</p>
             <hr/>
-            <p title="If the comment box can not be displayed, add the following configuration information to the host file.">如果无法显示评论框,请将下面的配置信息添加到host文件中.</p>
-            <div class="white-code">
-                {% highlight C %}
-                # Disqus Start
-                151.101.100.134	disqus.com
-                151.101.100.134	www.disqus.com
-                151.101.100.134	content.disqus.com
-                151.101.100.134	referrer.disqus.com
-                151.101.100.134	docs.disqus.com
-                151.101.100.134	dropbox.disqus.com
-                151.101.100.134	apkpure.disqus.com
-                151.101.100.64	glitter.services.disqus.com
-                151.101.100.64	links.services.disqus.com
-                173.192.82.196	realtime.services.disqus.com
-                50.18.249.249	help.disqus.com
-                23.65.183.218	about.disqus.com
-                23.65.183.218	blog.disqus.com
-                23.65.183.218	publishers.disqus.com
-                151.101.100.134  daoimpl.disqus.com
-                # Disqus End
-                {% endhighlight %}
-            </div>
         </div>
+    </div>
+    <div style="height:111px;">
+    </div>
+    <div class="comments">
         {% include JB/comments %}
     </div>
 </main>

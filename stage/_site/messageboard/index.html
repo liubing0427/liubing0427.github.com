@@ -72,51 +72,33 @@
 
 
 
-<main class="col-md-12 main-content">
+<main class="col-md-8 main-content">
     <div class="post page">
         <div class="d-block">
             <p title="Welcome to my blog.">欢迎来到我的博客.</p>
             <p title="You can leave messages to me if you have any suggestions or questions.">如果你有任何问题或建议可以在这里给我留言.</p>
             <hr/>
-            <p title="If the comment box can not be displayed, add the following configuration information to the host file.">如果无法显示评论框,请将下面的配置信息添加到host文件中.</p>
-            <div class="white-code">
-                <figure class="highlight"><pre><code class="language-c" data-lang="c"><span></span>                <span class="cp"># Disqus Start</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">www</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">content</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">referrer</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">docs</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">dropbox</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>	<span class="n">apkpure</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.64</span>	<span class="n">glitter</span><span class="p">.</span><span class="n">services</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.64</span>	<span class="n">links</span><span class="p">.</span><span class="n">services</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">173.192.82.196</span>	<span class="n">realtime</span><span class="p">.</span><span class="n">services</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">50.18.249.249</span>	<span class="n">help</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">23.65.183.218</span>	<span class="n">about</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">23.65.183.218</span>	<span class="n">blog</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">23.65.183.218</span>	<span class="n">publishers</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="mf">151.101.100.134</span>  <span class="n">daoimpl</span><span class="p">.</span><span class="n">disqus</span><span class="p">.</span><span class="n">com</span>
-                <span class="cp"># Disqus End</span>
-                </code></pre></figure>
-            </div>
         </div>
+    </div>
+    <div style="height:111px;">
+    </div>
+    <div class="comments">
         
 
 
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'daoimpl'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+  <div id="gitmentComments"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'liubing0427',
+  oauth: {
+    client_id: 'd02658d99eca68237708',
+    client_secret: '39fb7e21279923bb48a0dd91315330e8f7b12796',
+  },
+})
+gitment.render('gitmentComments')
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 

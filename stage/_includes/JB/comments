@@ -13,6 +13,8 @@
   {% include custom/comments %}
 {% when "duoshuo" %}
   {% include JB/comments-providers/duoshuo %}
+{% when "gitment" %}
+  {% include JB/comments-providers/gitment %}
 {% endcase %}
 
 {% endif %}
