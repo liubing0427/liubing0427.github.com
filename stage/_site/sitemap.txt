@@ -1,10 +1,10 @@
 
 http://liubing0427.github.io/atom.xml
 http://liubing0427.github.io/archive/
-http://liubing0427.github.io/dogfaceroad/
-http://liubing0427.github.io/about/
-http://liubing0427.github.io/tags/
 http://liubing0427.github.io/messageboard/
+http://liubing0427.github.io/about/
+http://liubing0427.github.io/dogfaceroad/
+http://liubing0427.github.io/tags/
 http://liubing0427.github.io/categories/
 http://liubing0427.github.io/app/
 http://liubing0427.github.io/
