@@ -1,0 +1,108 @@
+body,button,input,select,textarea {
+	font-size: 14px;
+	font-family: Microsoft YaHei, 微软雅黑, Verdana, sans-serif, 宋体;
+	background-color: #fff;
+	line-height: 18px;
+}
+
+a {
+	text-decoration: none;
+	color: #006cbf;
+}
+
+a:hover {
+	color: #ff9600;
+	cursor: pointer;
+}
+
+img,input {
+	border: none;
+}
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.mr20 {
+	margin-right: 20px;
+}
+
+.latestTool {
+	width: 300px;
+	float: left;
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #f6fcff;
+	position: relative;
+	z-index: 1;
+}
+
+.latestTool dt {
+	float: right;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.latestTool img {
+	float: left;
+	margin-right: 10px;
+	width: 96px;
+}
+
+.toolDescription dt {
+	width: 194px;
+	overflow: hidden;
+	white-space: nowrap; /*不显示的地方用省略号...代替*/
+	text-overflow: ellipsis; /* 支持 IE */
+	-o-text-overflow: ellipsis; /* 支持 Opera */
+}
+
+.latestTool .intro {
+	height: 36px;
+	float: right;
+	width: 194px;
+	margin: 5px 0;
+	overflow: hidden;
+}
+
+.latestTool .tags,.detailTags {
+	float: right;
+	width: 194px;
+	font-size: 12px;
+	color: #909090;
+}
+
+.boxShadow {
+	box-shadow:2px 2px 10px #AAA ;
+	-moz-box-shadow: 2px 2px 10px #AAA ;
+	-webkit-box-shadow: 2px 2px 10px #AAA ;
+}
+
+.detailTags {
+	width: 294px;
+}
+
+.detail {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 400px;
+	padding: 10px;
+	background-color: #dff5fe;
+}
+
+.detail dt {
+	width: 294px;
+}
+
+.detailIntro {
+	float: right;
+	width: 294px;
+	margin: 5px 0;
+}
+
+.toolActive {
+	z-index: 998;
+}
