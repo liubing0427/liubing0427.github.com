@@ -1,0 +1,11 @@
+I"T
+<p>使用WebClient访问可以获取IP的网站,通过正则表达式抓取页面中的IP.<p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="n">WebClient</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">WebClient</span><span class="p">();</span>
+<span class="kt">byte</span><span class="p">[]</span> <span class="n">bytRecv</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">DownloadData</span><span class="p">(</span> <span class="s">"http://get-ip.me/"</span><span class="p">);</span><span class="c1">//下载网页数据</span>
+<span class="kt">string</span> <span class="n">str</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetString</span><span class="p">(</span><span class="n">bytRecv</span><span class="p">);</span>
+<span class="kt">string</span> <span class="n">r</span> <span class="p">=</span> <span class="s">@"((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">ip</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">RegularExpressions</span><span class="p">.</span><span class="n">Regex</span><span class="p">.</span><span class="nf">Match</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">r</span><span class="p">).</span><span class="nf">ToString</span><span class="p">();</span><span class="c1">//提取信息 </span></code></pre></figure>
+
+</p></p>
+:ET

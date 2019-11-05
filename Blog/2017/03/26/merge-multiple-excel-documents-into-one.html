@@ -78,36 +78,36 @@
         
 <p><strong>在网上搜索多个excel文档合并成一个excel文档的方法， 发现找到的都是按照row来合并的，如下：</strong></p>
 
-<figure class="highlight"><pre><code class="language-vbnet" data-lang="vbnet"><span></span><span class="k">Sub</span> <span class="err">合并当前目录下所有工作簿的全部工作表()</span>
-<span class="k">Dim</span> <span class="n">MyPath</span><span class="p">,</span> <span class="n">MyName</span><span class="p">,</span> <span class="n">AWbName</span>
-<span class="k">Dim</span> <span class="n">Wb</span> <span class="ow">As</span> <span class="n">Workbook</span><span class="p">,</span> <span class="n">WbN</span> <span class="ow">As</span> <span class="kt">String</span>
-<span class="k">Dim</span> <span class="n">Num</span> <span class="ow">As</span> <span class="kt">Long</span>
-<span class="k">Dim</span> <span class="n">BOX</span> <span class="ow">As</span> <span class="kt">String</span>
-<span class="n">Application</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">MyPath</span> <span class="o">=</span> <span class="n">ActiveWorkbook</span><span class="p">.</span><span class="n">Path</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="n">Dir</span><span class="p">(</span><span class="n">MyPath</span> <span class="o">&amp;</span> <span class="s">&quot;\&quot;</span> <span class="o">&amp;</span> <span class="s">&quot;*.xls&quot;</span><span class="p">)</span>
-<span class="n">AWbName</span> <span class="o">=</span> <span class="n">ActiveWorkbook</span><span class="p">.</span><span class="n">Name</span>
-<span class="n">Num</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">Do</span> <span class="k">While</span> <span class="n">MyName</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;&quot;</span>
-<span class="k">If</span> <span class="n">MyName</span> <span class="o">&lt;&gt;</span> <span class="n">AWbName</span> <span class="k">Then</span>
-<span class="k">Set</span> <span class="n">Wb</span> <span class="o">=</span> <span class="n">Workbooks</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">MyPath</span> <span class="o">&amp;</span> <span class="s">&quot;\&quot;</span> <span class="o">&amp;</span> <span class="n">MyName</span><span class="p">)</span>
-<span class="n">Num</span> <span class="o">=</span> <span class="n">Num</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">With</span> <span class="n">Workbooks</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">ActiveSheet</span>
-<span class="k">If</span> <span class="n">Num</span> <span class="o">&lt;&gt;</span> <span class="mi">1</span> <span class="k">Then</span>
-<span class="n">Wb</span><span class="p">.</span><span class="n">Sheets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">UsedRange</span><span class="p">.</span><span class="n">Offset</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="n">Copy</span> <span class="p">.</span><span class="n">Cells</span><span class="p">(.</span><span class="n">Range</span><span class="p">(</span><span class="s">&quot;A65536&quot;</span><span class="p">).</span><span class="n">End</span><span class="p">(</span><span class="n">xlUp</span><span class="p">).</span><span class="n">Row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">Else</span>
-<span class="n">Wb</span><span class="p">.</span><span class="n">Sheets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">UsedRange</span><span class="p">.</span><span class="n">Copy</span> <span class="p">.</span><span class="n">Cells</span><span class="p">(.</span><span class="n">Range</span><span class="p">(</span><span class="s">&quot;A65536&quot;</span><span class="p">).</span><span class="n">End</span><span class="p">(</span><span class="n">xlUp</span><span class="p">).</span><span class="n">Row</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">End</span> <span class="k">If</span>
-<span class="n">WbN</span> <span class="o">=</span> <span class="n">WbN</span> <span class="o">&amp;</span> <span class="n">Chr</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Wb</span><span class="p">.</span><span class="n">Name</span>
-<span class="n">Wb</span><span class="p">.</span><span class="n">Close</span> <span class="k">False</span>
-<span class="k">End</span> <span class="k">With</span>
-<span class="k">End</span> <span class="k">If</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="n">Dir</span>
-<span class="k">Loop</span>
-<span class="n">Range</span><span class="p">(</span><span class="s">&quot;A1&quot;</span><span class="p">).</span><span class="n">Select</span>
-<span class="n">Application</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">True</span>
-<span class="n">MsgBox</span> <span class="s">&quot;共合并了&quot;</span> <span class="o">&amp;</span> <span class="n">Num</span> <span class="o">&amp;</span> <span class="s">&quot;个工作薄下的全部工作表。如下：&quot;</span> <span class="o">&amp;</span> <span class="n">Chr</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">WbN</span><span class="p">,</span> <span class="n">vbInformation</span><span class="p">,</span> <span class="s">&quot;提示&quot;</span>
-<span class="k">End</span> <span class="k">Sub</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-vbnet" data-lang="vbnet">Sub 合并当前目录下所有工作簿的全部工作表()
+Dim MyPath, MyName, AWbName
+Dim Wb As Workbook, WbN As String
+Dim Num As Long
+Dim BOX As String
+Application.ScreenUpdating = False
+MyPath = ActiveWorkbook.Path
+MyName = Dir(MyPath &amp; "\" &amp; "*.xls")
+AWbName = ActiveWorkbook.Name
+Num = 0
+Do While MyName &lt;&gt; ""
+If MyName &lt;&gt; AWbName Then
+Set Wb = Workbooks.Open(MyPath &amp; "\" &amp; MyName)
+Num = Num + 1
+With Workbooks(1).ActiveSheet
+If Num &lt;&gt; 1 Then
+Wb.Sheets(1).UsedRange.Offset(1, 0).Copy .Cells(.Range("A65536").End(xlUp).Row + 1, 1)
+Else
+Wb.Sheets(1).UsedRange.Copy .Cells(.Range("A65536").End(xlUp).Row, 1)
+End If
+WbN = WbN &amp; Chr(13) &amp; Wb.Name
+Wb.Close False
+End With
+End If
+MyName = Dir
+Loop
+Range("A1").Select
+Application.ScreenUpdating = True
+MsgBox "共合并了" &amp; Num &amp; "个工作薄下的全部工作表。如下：" &amp; Chr(13) &amp; WbN, vbInformation, "提示"
+End Sub</code></pre></figure>
 
 <p><strong>效果：</strong></p>
 
@@ -117,38 +117,38 @@
 
 <p><strong>所以修改了一下，可以实现按column合并：</strong></p>
 
-<figure class="highlight"><pre><code class="language-vbnet" data-lang="vbnet"><span></span><span class="k">Sub</span> <span class="err">合并当前目录下所有工作簿的全部工作表()</span>
-<span class="k">Dim</span> <span class="n">MyPath</span><span class="p">,</span> <span class="n">MyName</span><span class="p">,</span> <span class="n">AWbName</span>
-<span class="k">Dim</span> <span class="n">Wb</span> <span class="ow">As</span> <span class="n">Workbook</span><span class="p">,</span> <span class="n">WbN</span> <span class="ow">As</span> <span class="kt">String</span>
-<span class="k">Dim</span> <span class="n">Num</span> <span class="ow">As</span> <span class="kt">Long</span>
-<span class="k">Dim</span> <span class="n">BOX</span> <span class="ow">As</span> <span class="kt">String</span>
-<span class="k">Dim</span> <span class="n">lColumn</span> <span class="ow">As</span> <span class="kt">Long</span>
-<span class="n">Application</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">MyPath</span> <span class="o">=</span> <span class="n">ActiveWorkbook</span><span class="p">.</span><span class="n">Path</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="n">Dir</span><span class="p">(</span><span class="n">MyPath</span> <span class="o">&amp;</span> <span class="s">&quot;\&quot;</span> <span class="o">&amp;</span> <span class="s">&quot;*.xls&quot;</span><span class="p">)</span>
-<span class="n">AWbName</span> <span class="o">=</span> <span class="n">ActiveWorkbook</span><span class="p">.</span><span class="n">Name</span>
-<span class="n">Num</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">Do</span> <span class="k">While</span> <span class="n">MyName</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;&quot;</span>
-<span class="k">If</span> <span class="n">MyName</span> <span class="o">&lt;&gt;</span> <span class="n">AWbName</span> <span class="k">Then</span>
-<span class="k">Set</span> <span class="n">Wb</span> <span class="o">=</span> <span class="n">Workbooks</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">MyPath</span> <span class="o">&amp;</span> <span class="s">&quot;\&quot;</span> <span class="o">&amp;</span> <span class="n">MyName</span><span class="p">)</span>
-<span class="n">Num</span> <span class="o">=</span> <span class="n">Num</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">With</span> <span class="n">Workbooks</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">ActiveSheet</span>
-<span class="n">lColumn</span> <span class="o">=</span> <span class="p">.</span><span class="n">Cells</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Columns</span><span class="p">.</span><span class="n">Count</span><span class="p">).</span><span class="n">End</span><span class="p">(</span><span class="n">xlToLeft</span><span class="p">).</span><span class="n">Column</span>
-<span class="k">If</span> <span class="n">Num</span> <span class="o">&lt;&gt;</span> <span class="mi">1</span> <span class="k">Then</span>
-<span class="n">Wb</span><span class="p">.</span><span class="n">Sheets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">UsedRange</span><span class="p">.</span><span class="n">Offset</span><span class="p">(,</span> <span class="mi">1</span><span class="p">).</span><span class="n">Copy</span> <span class="p">.</span><span class="n">Cells</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lColumn</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">Else</span>
-<span class="n">Wb</span><span class="p">.</span><span class="n">Sheets</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">UsedRange</span><span class="p">.</span><span class="n">Copy</span> <span class="p">.</span><span class="n">Cells</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lColumn</span><span class="p">)</span>
-<span class="k">End</span> <span class="k">If</span>
-<span class="n">WbN</span> <span class="o">=</span> <span class="n">WbN</span> <span class="o">&amp;</span> <span class="n">Chr</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Wb</span><span class="p">.</span><span class="n">Name</span>
-<span class="n">Wb</span><span class="p">.</span><span class="n">Close</span> <span class="k">False</span>
-<span class="k">End</span> <span class="k">With</span>
-<span class="k">End</span> <span class="k">If</span>
-<span class="n">MyName</span> <span class="o">=</span> <span class="n">Dir</span>
-<span class="k">Loop</span>
-<span class="n">Range</span><span class="p">(</span><span class="s">&quot;B1&quot;</span><span class="p">).</span><span class="n">Select</span>
-<span class="n">Application</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">True</span>
-<span class="n">MsgBox</span> <span class="s">&quot;共合并了&quot;</span> <span class="o">&amp;</span> <span class="n">Num</span> <span class="o">&amp;</span> <span class="s">&quot;个工作薄下的全部工作表。如下：&quot;</span> <span class="o">&amp;</span> <span class="n">Chr</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">WbN</span><span class="p">,</span> <span class="n">vbInformation</span><span class="p">,</span> <span class="s">&quot;提示&quot;</span>
-<span class="k">End</span> <span class="k">Sub</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-vbnet" data-lang="vbnet">Sub 合并当前目录下所有工作簿的全部工作表()
+Dim MyPath, MyName, AWbName
+Dim Wb As Workbook, WbN As String
+Dim Num As Long
+Dim BOX As String
+Dim lColumn As Long
+Application.ScreenUpdating = False
+MyPath = ActiveWorkbook.Path
+MyName = Dir(MyPath &amp; "\" &amp; "*.xls")
+AWbName = ActiveWorkbook.Name
+Num = 0
+Do While MyName &lt;&gt; ""
+If MyName &lt;&gt; AWbName Then
+Set Wb = Workbooks.Open(MyPath &amp; "\" &amp; MyName)
+Num = Num + 1
+With Workbooks(1).ActiveSheet
+lColumn = .Cells(1, Columns.Count).End(xlToLeft).Column
+If Num &lt;&gt; 1 Then
+Wb.Sheets(1).UsedRange.Offset(, 1).Copy .Cells(1, lColumn + 1)
+Else
+Wb.Sheets(1).UsedRange.Copy .Cells(1, lColumn)
+End If
+WbN = WbN &amp; Chr(13) &amp; Wb.Name
+Wb.Close False
+End With
+End If
+MyName = Dir
+Loop
+Range("B1").Select
+Application.ScreenUpdating = True
+MsgBox "共合并了" &amp; Num &amp; "个工作薄下的全部工作表。如下：" &amp; Chr(13) &amp; WbN, vbInformation, "提示"
+End Sub</code></pre></figure>
 
 <p><strong>效果：</strong></p>
 <p><img class="img-responsive center-block" alt="datasync" src="/assets/image/posts/excel2_0.png" width="594" height="405" /></p>
@@ -250,7 +250,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
         <hr>
         <div class="row footer-bottom">
             <ul class="list-inline text-center">
-                <li><p>&copy; Liu Bing 2018 </p></li>
+                <li><p>&copy; Liu Bing 2019 </p></li>
             </ul>
         </div>
     </div>

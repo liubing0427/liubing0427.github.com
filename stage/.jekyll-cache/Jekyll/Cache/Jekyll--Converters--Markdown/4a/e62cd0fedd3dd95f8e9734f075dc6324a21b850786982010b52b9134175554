@@ -1,0 +1,6 @@
+I"•
+<div class="text-center">
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script src="/assets/javascript/clock.js"></script>
+</div>
+:ET

@@ -96,22 +96,22 @@
   <li><strong>对DB执行下列语句，将结果复制出来，再对DB执行一次</strong> :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span></span><span class="k">SELECT</span> <span class="s1">&#39;DROP TRIGGER &#39;</span> <span class="o">+</span> <span class="n">name</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="s1">'DROP TRIGGER '</span> <span class="o">+</span> <span class="n">name</span>
 <span class="k">FROM</span> <span class="n">sysobjects</span>
-<span class="k">WHERE</span> <span class="k">type</span> <span class="o">=</span> <span class="s1">&#39;tr&#39;</span></code></pre></figure>
+<span class="k">WHERE</span> <span class="k">type</span> <span class="o">=</span> <span class="s1">'tr'</span></code></pre></figure>
 
 <ul>
   <li><strong>直接对DB执行</strong> :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span></span><span class="k">DECLARE</span> <span class="o">@</span><span class="k">Trigger</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DECLARE</span> <span class="o">@</span><span class="k">Trigger</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 <span class="k">DECLARE</span> <span class="n">CUR</span> <span class="k">CURSOR</span>
-<span class="k">FOR</span> <span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">sysobjects</span> <span class="k">WHERE</span> <span class="k">type</span> <span class="o">=</span> <span class="s1">&#39;tr&#39;</span>
+<span class="k">FOR</span> <span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">sysobjects</span> <span class="k">WHERE</span> <span class="k">type</span> <span class="o">=</span> <span class="s1">'tr'</span>
 <span class="k">OPEN</span> <span class="n">CUR</span>
 <span class="k">FETCH</span> <span class="k">NEXT</span> <span class="k">FROM</span> <span class="n">CUR</span> <span class="k">INTO</span> <span class="o">@</span><span class="k">Trigger</span>
 <span class="n">WHILE</span> <span class="o">@@</span><span class="n">FETCH_STATUS</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">BEGIN</span>
-    <span class="k">EXEC</span><span class="p">(</span><span class="s1">&#39;DROP TRIGGER &#39;</span> <span class="o">+</span> <span class="o">@</span><span class="k">Trigger</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span>
+    <span class="k">EXEC</span><span class="p">(</span><span class="s1">'DROP TRIGGER '</span> <span class="o">+</span> <span class="o">@</span><span class="k">Trigger</span> <span class="o">+</span> <span class="s1">''</span> <span class="p">)</span>
     <span class="k">FETCH</span> <span class="k">NEXT</span> <span class="k">FROM</span> <span class="n">CUR</span> <span class="k">INTO</span> <span class="o">@</span><span class="k">Trigger</span>
 <span class="k">END</span>
 <span class="k">CLOSE</span> <span class="n">CUR</span>
@@ -124,24 +124,24 @@
   <li><strong>对DB执行下列语句，将结果复制出来，再对DB执行一次</strong> :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span></span><span class="k">SELECT</span> <span class="s1">&#39;DROP PROCEDURE DATASYNC.[&#39;</span> <span class="o">+</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="k">FROM</span> <span class="n">SYS</span><span class="p">.</span><span class="n">PROCEDURES</span> <span class="n">P</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="s1">'DROP PROCEDURE DATASYNC.['</span> <span class="o">+</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="o">+</span> <span class="s1">']'</span> <span class="k">FROM</span> <span class="n">SYS</span><span class="p">.</span><span class="n">PROCEDURES</span> <span class="n">P</span>
 <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">SYS</span><span class="p">.</span> <span class="n">SCHEMAS</span> <span class="n">S</span> <span class="k">ON</span> <span class="n">P</span><span class="p">.</span><span class="n">SCHEMA_ID</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="n">SCHEMA_ID</span>
-<span class="k">WHERE</span> <span class="n">P</span><span class="p">.</span><span class="k">TYPE</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span> <span class="k">AND</span> <span class="n">S</span><span class="p">.</span><span class="n">NAME</span> <span class="o">=</span> <span class="s1">&#39;DATASYNC&#39;</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">IS_MS_SHIPPED</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="k">NOT</span> <span class="k">LIKE</span> <span class="s1">&#39;sp[_]%diagram%&#39;</span></code></pre></figure>
+<span class="k">WHERE</span> <span class="n">P</span><span class="p">.</span><span class="k">TYPE</span> <span class="o">=</span> <span class="s1">'P'</span> <span class="k">AND</span> <span class="n">S</span><span class="p">.</span><span class="n">NAME</span> <span class="o">=</span> <span class="s1">'DATASYNC'</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">IS_MS_SHIPPED</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="k">NOT</span> <span class="k">LIKE</span> <span class="s1">'sp[_]%diagram%'</span></code></pre></figure>
 
 <ul>
   <li><strong>直接对DB执行</strong> :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span></span><span class="k">DECLARE</span> <span class="o">@</span><span class="n">PROCNAME</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DECLARE</span> <span class="o">@</span><span class="n">PROCNAME</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 <span class="k">DECLARE</span> <span class="n">CUR</span> <span class="k">CURSOR</span>
 <span class="k">FOR</span> <span class="k">SELECT</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="k">FROM</span> <span class="n">SYS</span><span class="p">.</span><span class="n">PROCEDURES</span> <span class="n">P</span>
        <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">SYS</span><span class="p">.</span> <span class="n">SCHEMAS</span> <span class="n">S</span> <span class="k">ON</span> <span class="n">P</span><span class="p">.</span><span class="n">SCHEMA_ID</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="n">SCHEMA_ID</span>
-       <span class="k">WHERE</span> <span class="n">P</span><span class="p">.</span><span class="k">TYPE</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span> <span class="k">AND</span> <span class="n">S</span><span class="p">.</span><span class="n">NAME</span> <span class="o">=</span> <span class="s1">&#39;DATASYNC&#39;</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">IS_MS_SHIPPED</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="k">NOT</span> <span class="k">LIKE</span> <span class="s1">&#39;sp[_]%diagram%&#39;</span>
+       <span class="k">WHERE</span> <span class="n">P</span><span class="p">.</span><span class="k">TYPE</span> <span class="o">=</span> <span class="s1">'P'</span> <span class="k">AND</span> <span class="n">S</span><span class="p">.</span><span class="n">NAME</span> <span class="o">=</span> <span class="s1">'DATASYNC'</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">IS_MS_SHIPPED</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">AND</span> <span class="n">P</span><span class="p">.</span><span class="n">NAME</span> <span class="k">NOT</span> <span class="k">LIKE</span> <span class="s1">'sp[_]%diagram%'</span>
 <span class="k">OPEN</span> <span class="n">CUR</span>
 <span class="k">FETCH</span> <span class="k">NEXT</span> <span class="k">FROM</span> <span class="n">CUR</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">PROCNAME</span>
 <span class="n">WHILE</span> <span class="o">@@</span><span class="n">FETCH_STATUS</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">BEGIN</span>
-    <span class="k">EXEC</span><span class="p">(</span><span class="s1">&#39;DROP PROCEDURE DATASYNC.[&#39;</span> <span class="o">+</span> <span class="o">@</span><span class="n">PROCNAME</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="p">)</span>
+    <span class="k">EXEC</span><span class="p">(</span><span class="s1">'DROP PROCEDURE DATASYNC.['</span> <span class="o">+</span> <span class="o">@</span><span class="n">PROCNAME</span> <span class="o">+</span> <span class="s1">']'</span> <span class="p">)</span>
     <span class="k">FETCH</span> <span class="k">NEXT</span> <span class="k">FROM</span> <span class="n">CUR</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">PROCNAME</span>
 <span class="k">END</span>
 <span class="k">CLOSE</span> <span class="n">CUR</span>
@@ -152,20 +152,20 @@
   <li><strong>对DB执行下列语句，将结果复制出来，再对DB执行一次</strong> :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span></span><span class="k">SELECT</span> <span class="s1">&#39;DROP TABLE DataSync.[&#39;</span> <span class="o">+</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span> <span class="n">tables</span> <span class="k">WHERE</span> <span class="k">schema_name</span><span class="p">(</span> <span class="p">[</span><span class="n">schema_id</span><span class="p">]</span> <span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;DataSync&#39;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="s1">'DROP TABLE DataSync.['</span> <span class="o">+</span><span class="n">name</span> <span class="o">+</span> <span class="s1">']'</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span> <span class="n">tables</span> <span class="k">WHERE</span> <span class="k">schema_name</span><span class="p">(</span> <span class="p">[</span><span class="n">schema_id</span><span class="p">]</span> <span class="p">)</span> <span class="o">=</span> <span class="s1">'DataSync'</span></code></pre></figure>
 
 <ul>
   <li><strong>直接对DB执行</strong> :</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span></span><span class="k">DECLARE</span> <span class="o">@</span><span class="n">TableName</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DECLARE</span> <span class="o">@</span><span class="n">TableName</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 <span class="k">DECLARE</span> <span class="n">CUR</span> <span class="k">CURSOR</span>
-<span class="k">FOR</span> <span class="k">SELECT</span> <span class="n">NAME</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span> <span class="n">tables</span> <span class="k">WHERE</span> <span class="k">schema_name</span><span class="p">(</span> <span class="p">[</span><span class="n">schema_id</span><span class="p">]</span> <span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;DataSync&#39;</span>
+<span class="k">FOR</span> <span class="k">SELECT</span> <span class="n">NAME</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span> <span class="n">tables</span> <span class="k">WHERE</span> <span class="k">schema_name</span><span class="p">(</span> <span class="p">[</span><span class="n">schema_id</span><span class="p">]</span> <span class="p">)</span> <span class="o">=</span> <span class="s1">'DataSync'</span>
 <span class="k">OPEN</span> <span class="n">CUR</span>
 <span class="k">FETCH</span> <span class="k">NEXT</span> <span class="k">FROM</span> <span class="n">CUR</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">TableName</span>
 <span class="n">WHILE</span> <span class="o">@@</span><span class="n">FETCH_STATUS</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">BEGIN</span>
-    <span class="k">EXEC</span><span class="p">(</span><span class="s1">&#39;DROP TABLE DataSync.[&#39;</span> <span class="o">+</span> <span class="o">@</span><span class="n">TableName</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span> <span class="p">)</span>
+    <span class="k">EXEC</span><span class="p">(</span><span class="s1">'DROP TABLE DataSync.['</span> <span class="o">+</span> <span class="o">@</span><span class="n">TableName</span> <span class="o">+</span> <span class="s1">']'</span> <span class="p">)</span>
     <span class="k">FETCH</span> <span class="k">NEXT</span> <span class="k">FROM</span> <span class="n">CUR</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">TableName</span>
 <span class="k">END</span>
 <span class="k">CLOSE</span> <span class="n">CUR</span>
@@ -272,7 +272,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
         <hr>
         <div class="row footer-bottom">
             <ul class="list-inline text-center">
-                <li><p>&copy; Liu Bing 2018 </p></li>
+                <li><p>&copy; Liu Bing 2019 </p></li>
             </ul>
         </div>
     </div>
