@@ -118,19 +118,21 @@
         
 
 
-  <div id="gitmentComments"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
 <script>
-var gitment = new Gitment({
-  owner: 'liubing0427',
+const gitalk = new Gitalk({
+  clientID: 'd02658d99eca68237708',
+  clientSecret: '39fb7e21279923bb48a0dd91315330e8f7b12796',
   repo: 'liubing0427.github.com',
-  oauth: {
-    client_id: 'd02658d99eca68237708',
-    client_secret: '39fb7e21279923bb48a0dd91315330e8f7b12796',
-  },
+  owner: 'liubing0427',
+  admin: ['liubing0427'],
+  id: location.pathname,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
 })
-gitment.render('gitmentComments')
+
+gitalk.render('gitalk-container')
 </script>
 
 
