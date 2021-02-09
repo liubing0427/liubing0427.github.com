@@ -5,7 +5,7 @@ window.onload = function ()
 { 
     var time = new Date();
     var year = time.getFullYear();
-    document.getElementById("cp").innerHTML = '©'+year+' <a href="http://www.daoimpl.com">BingLiu</a>';
+    document.getElementById("cp").innerHTML = '©'+year+' <a href="http://www.997life.com">BingLiu</a>';
     var oTxt = document.getElementById('lst-ib');
     oTxt.onkeyup = function(e)
     {
@@ -36,7 +36,7 @@ window.onload = function ()
     });
     var sethfPos=sethfPos||0;
     (function() {
-        var p="http://search.daoimpl.com/",
+        var p="http://search.997life.com/",
         m=(navigator.userAgent.indexOf("MSIE")!=-1 || navigator.userAgent.indexOf("Trident")!=-1)&&!window.opera,
         q=Math.random()*100,
         u="和谐搜索",
@@ -272,10 +272,10 @@ function Show_Hidden(){
 
 function h(obj){
     obj.style.behavior='url(#default#homepage)';
-    var a = obj.setHomePage('http://search.daoimpl.com/');
+    var a = obj.setHomePage('http://search.997life.com/');
 }
 
 function getLuckly(){
-    window.location.href="http://www.daoimpl.com/app/";
+    window.location.href="http://www.997life.com/app/";
 }
 

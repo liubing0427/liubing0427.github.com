@@ -4,7 +4,7 @@
  <title>Bing's Blog</title>
  <link href="http://liubing0427.github.io/" rel="self"/>
  <link href="http://liubing0427.github.io"/>
- <updated>2019-11-05T19:34:14+08:00</updated>
+ <updated>2021-02-09T09:00:57+00:00</updated>
  <id>http://liubing0427.github.io</id>
  <author>
    <name>Liu Bing</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Google Chrome's Connection Error Egg : T-Rex Runner</title>
    <link href="http://liubing0427.github.io/Blog/2017/08/20/google-chromes-connection-error-egg-t-rex-runner"/>
-   <updated>2017-08-20T00:00:00+08:00</updated>
+   <updated>2017-08-20T00:00:00+00:00</updated>
    <id>http://liubing0427.github.io/Blog/2017/08/20/google-chromes-connection-error-egg--t-rex-runner</id>
    <content type="html">
 &lt;div class=&quot;offline&quot;&gt;
@@ -47,7 +47,7 @@
  <entry>
    <title>使用VBA将多个excel文档合并成一个excel</title>
    <link href="http://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one"/>
-   <updated>2017-03-26T00:00:00+08:00</updated>
+   <updated>2017-03-26T00:00:00+00:00</updated>
    <id>http://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one</id>
    <content type="html">
 &lt;p&gt;&lt;strong&gt;在网上搜索多个excel文档合并成一个excel文档的方法， 发现找到的都是按照row来合并的，如下：&lt;/strong&gt;&lt;/p&gt;
@@ -135,7 +135,7 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  <entry>
    <title>CSS动画练习-大白和哆啦A梦</title>
    <link href="http://liubing0427.github.io/Blog/2015/04/16/cssanimation"/>
-   <updated>2015-04-16T00:00:00+08:00</updated>
+   <updated>2015-04-16T00:00:00+00:00</updated>
    <id>http://liubing0427.github.io/Blog/2015/04/16/cssanimation</id>
    <content type="html">
 &lt;div class=&quot;cssanimation&quot;&gt;
@@ -169,7 +169,7 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  <entry>
    <title>Html5Canvas绘制时钟</title>
    <link href="http://liubing0427.github.io/Blog/2013/12/19/html5canvas"/>
-   <updated>2013-12-19T00:00:00+08:00</updated>
+   <updated>2013-12-19T00:00:00+00:00</updated>
    <id>http://liubing0427.github.io/Blog/2013/12/19/html5canvas</id>
    <content type="html">
 &lt;div class=&quot;text-center&quot;&gt;
@@ -182,7 +182,7 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  <entry>
    <title>一些有用的Sql语句</title>
    <link href="http://liubing0427.github.io/Blog/2013/11/27/sql"/>
-   <updated>2013-11-27T00:00:00+08:00</updated>
+   <updated>2013-11-27T00:00:00+00:00</updated>
    <id>http://liubing0427.github.io/Blog/2013/11/27/sql</id>
    <content type="html">
 &lt;p&gt;&lt;img class=&quot;img-responsive center-block&quot; alt=&quot;datasync&quot; src=&quot;/assets/image/posts/newsyncgroup.png&quot; width=&quot;594&quot; height=&quot;405&quot; /&gt;&lt;/p&gt;
@@ -286,7 +286,7 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  <entry>
    <title>C#获取电脑的公网IP</title>
    <link href="http://liubing0427.github.io/Blog/2013/08/28/Get_IP"/>
-   <updated>2013-08-28T00:00:00+08:00</updated>
+   <updated>2013-08-28T00:00:00+00:00</updated>
    <id>http://liubing0427.github.io/Blog/2013/08/28/Get_IP</id>
    <content type="html">
 &lt;p&gt;使用WebClient访问可以获取IP的网站,通过正则表达式抓取页面中的IP.&lt;p&gt;

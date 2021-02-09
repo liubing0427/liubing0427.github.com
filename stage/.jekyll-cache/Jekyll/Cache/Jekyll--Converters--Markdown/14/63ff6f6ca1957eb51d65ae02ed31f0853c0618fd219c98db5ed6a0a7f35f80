@@ -1,0 +1,36 @@
+I"�
+<p><strong>在网上搜索多个excel文档合并成一个excel文档的方法， 发现找到的都是按照row来合并的，如下：</strong></p>
+
+<figure class="highlight"><pre><code class="language-vbnet" data-lang="vbnet">Sub 合并当前目录下所有工作簿的全部工作表()
+Dim MyPath, MyName, AWbName
+Dim Wb As Workbook, WbN As String
+Dim Num As Long
+Dim BOX As String
+Application.ScreenUpdating = False
+MyPath = ActiveWorkbook.Path
+MyName = Dir(MyPath &amp; "\" &amp; "*.xls")
+AWbName = ActiveWorkbook.Name
+Num = 0
+Do While MyName &lt;&gt; ""
+If MyName &lt;&gt; AWbName Then
+Set Wb = Workbooks.Open(MyPath &amp; "\" &amp; MyName)
+Num = Num + 1
+With Workbooks(1).ActiveSheet
+If Num &lt;&gt; 1 Then
+Wb.Sheets(1).UsedRange.Offset(1, 0).Copy .Cells(.Range("A65536").End(xlUp).Row + 1, 1)
+Else
+Wb.Sheets(1).UsedRange.Copy .Cells(.Range("A65536").End(xlUp).Row, 1)
+End If
+WbN = WbN &amp; Chr(13) &amp; Wb.Name
+Wb.Close False
+End With
+End If
+MyName = Dir
+Loop
+Range("A1").Select
+Application.ScreenUpdating = True
+MsgBox "共合并了" &amp; Num &amp; "个工作薄下的全部工作表。如下：" &amp; Chr(13) &amp; WbN, vbInformation, "提示"
+End Sub</code></pre></figure>
+
+<p><strong>效果：</strong></p>
+:ET

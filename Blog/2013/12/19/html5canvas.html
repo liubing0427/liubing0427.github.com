@@ -111,7 +111,8 @@ const gitalk = new Gitalk({
   owner: 'liubing0427',
   admin: ['liubing0427'],
   id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
+  distractionFreeMode: false,  // Facebook-like distraction free mode
+  proxy: 'https://github.com/login/oauth/access_token'
 })
 
 gitalk.render('gitalk-container')
@@ -180,7 +181,7 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
         <hr>
         <div class="row footer-bottom">
             <ul class="list-inline text-center">
-                <li><p>&copy; Liu Bing 2019 </p></li>
+                <li><p>&copy; Liu Bing 2021 </p></li>
             </ul>
         </div>
     </div>
