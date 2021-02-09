@@ -117,7 +117,7 @@ const gitalk = new Gitalk({
   admin: ['liubing0427'],
   id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50
   distractionFreeMode: false,  // Facebook-like distraction free mode
-  proxy: 'http://cors-anywhere.997life.com/https://github.com/login/oauth/access_token'
+  proxy: 'https://cors-anywhere.997life.com/https://github.com/login/oauth/access_token'
 })
 
 gitalk.render('gitalk-container')
