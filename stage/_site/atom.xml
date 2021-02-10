@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Bing's Blog</title>
- <link href="http://liubing0427.github.io/" rel="self"/>
- <link href="http://liubing0427.github.io"/>
- <updated>2021-02-09T11:04:30+00:00</updated>
- <id>http://liubing0427.github.io</id>
+ <link href="https://liubing0427.github.io/" rel="self"/>
+ <link href="https://liubing0427.github.io"/>
+ <updated>2021-02-10T06:44:29+00:00</updated>
+ <id>https://liubing0427.github.io</id>
  <author>
    <name>Liu Bing</name>
    <email>liubing0427@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Google Chrome's Connection Error Egg : T-Rex Runner</title>
-   <link href="http://liubing0427.github.io/Blog/2017/08/20/google-chromes-connection-error-egg-t-rex-runner"/>
+   <link href="https://liubing0427.github.io/Blog/2017/08/20/google-chromes-connection-error-egg-t-rex-runner"/>
    <updated>2017-08-20T00:00:00+00:00</updated>
-   <id>http://liubing0427.github.io/Blog/2017/08/20/google-chromes-connection-error-egg--t-rex-runner</id>
+   <id>https://liubing0427.github.io/Blog/2017/08/20/google-chromes-connection-error-egg--t-rex-runner</id>
    <content type="html">
 &lt;div class=&quot;offline&quot;&gt;
    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/themes/twitter/css/runner.css&quot; /&gt;
@@ -46,9 +46,9 @@
  
  <entry>
    <title>使用VBA将多个excel文档合并成一个excel</title>
-   <link href="http://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one"/>
+   <link href="https://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one"/>
    <updated>2017-03-26T00:00:00+00:00</updated>
-   <id>http://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one</id>
+   <id>https://liubing0427.github.io/Blog/2017/03/26/merge-multiple-excel-documents-into-one</id>
    <content type="html">
 &lt;p&gt;&lt;strong&gt;在网上搜索多个excel文档合并成一个excel文档的方法， 发现找到的都是按照row来合并的，如下：&lt;/strong&gt;&lt;/p&gt;
 
@@ -134,9 +134,9 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  
  <entry>
    <title>CSS动画练习-大白和哆啦A梦</title>
-   <link href="http://liubing0427.github.io/Blog/2015/04/16/cssanimation"/>
+   <link href="https://liubing0427.github.io/Blog/2015/04/16/cssanimation"/>
    <updated>2015-04-16T00:00:00+00:00</updated>
-   <id>http://liubing0427.github.io/Blog/2015/04/16/cssanimation</id>
+   <id>https://liubing0427.github.io/Blog/2015/04/16/cssanimation</id>
    <content type="html">
 &lt;div class=&quot;cssanimation&quot;&gt;
 &lt;p&gt;侧面行走的&lt;a href=&quot;https://jsfiddle.net/rubatong/2oyLc2av/embedded/result/&quot;&gt;大白&lt;/a&gt;&lt;/p&gt;
@@ -161,16 +161,16 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 已在IE、Chrome下验证
 
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;//ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js&quot;&gt;&lt;/script&gt;
 &lt;/div&gt;
 </content>
  </entry>
  
  <entry>
    <title>Html5Canvas绘制时钟</title>
-   <link href="http://liubing0427.github.io/Blog/2013/12/19/html5canvas"/>
+   <link href="https://liubing0427.github.io/Blog/2013/12/19/html5canvas"/>
    <updated>2013-12-19T00:00:00+00:00</updated>
-   <id>http://liubing0427.github.io/Blog/2013/12/19/html5canvas</id>
+   <id>https://liubing0427.github.io/Blog/2013/12/19/html5canvas</id>
    <content type="html">
 &lt;div class=&quot;text-center&quot;&gt;
     &lt;canvas id=&quot;canvas&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
@@ -181,9 +181,9 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  
  <entry>
    <title>一些有用的Sql语句</title>
-   <link href="http://liubing0427.github.io/Blog/2013/11/27/sql"/>
+   <link href="https://liubing0427.github.io/Blog/2013/11/27/sql"/>
    <updated>2013-11-27T00:00:00+00:00</updated>
-   <id>http://liubing0427.github.io/Blog/2013/11/27/sql</id>
+   <id>https://liubing0427.github.io/Blog/2013/11/27/sql</id>
    <content type="html">
 &lt;p&gt;&lt;img class=&quot;img-responsive center-block&quot; alt=&quot;datasync&quot; src=&quot;/assets/image/posts/newsyncgroup.png&quot; width=&quot;594&quot; height=&quot;405&quot; /&gt;&lt;/p&gt;
 
@@ -285,9 +285,9 @@ End Sub&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
  
  <entry>
    <title>C#获取电脑的公网IP</title>
-   <link href="http://liubing0427.github.io/Blog/2013/08/28/Get_IP"/>
+   <link href="https://liubing0427.github.io/Blog/2013/08/28/Get_IP"/>
    <updated>2013-08-28T00:00:00+00:00</updated>
-   <id>http://liubing0427.github.io/Blog/2013/08/28/Get_IP</id>
+   <id>https://liubing0427.github.io/Blog/2013/08/28/Get_IP</id>
    <content type="html">
 &lt;p&gt;使用WebClient访问可以获取IP的网站,通过正则表达式抓取页面中的IP.&lt;p&gt;
 

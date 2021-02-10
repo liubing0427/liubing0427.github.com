@@ -1,4 +1,4 @@
-I"�
+I"�
 <div class="cssanimation">
 <p>侧面行走的<a href="https://jsfiddle.net/rubatong/2oyLc2av/embedded/result/">大白</a></p>
 
@@ -22,6 +22,6 @@
 
 已在IE、Chrome下验证
 
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="//ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 </div>
 :ET

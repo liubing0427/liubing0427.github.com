@@ -29,5 +29,5 @@ tags: [CSS,Animation,大白,哆啦A梦]
 
 已在IE、Chrome下验证
 
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="//ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 </div>

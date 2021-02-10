@@ -5,7 +5,7 @@ window.onload = function ()
 { 
     var time = new Date();
     var year = time.getFullYear();
-    document.getElementById("cp").innerHTML = '©'+year+' <a href="http://www.997life.com">BingLiu</a>';
+    document.getElementById("cp").innerHTML = '©'+year+' <a href="https://www.997life.com">BingLiu</a>';
     var oTxt = document.getElementById('lst-ib');
     oTxt.onkeyup = function(e)
     {
@@ -36,7 +36,7 @@ window.onload = function ()
     });
     var sethfPos=sethfPos||0;
     (function() {
-        var p="http://search.997life.com/",
+        var p="https://search.997life.com/",
         m=(navigator.userAgent.indexOf("MSIE")!=-1 || navigator.userAgent.indexOf("Trident")!=-1)&&!window.opera,
         q=Math.random()*100,
         u="和谐搜索",
@@ -132,7 +132,7 @@ function getdata()
     }       
     oScript = document.createElement('script');
     //其中‘wd’是搜索的关键字，‘cb’是一个回调函数，该回调函数是我们取到数据要后执行的函数，oScript.src中cb=baidu即表示取到数据后执行baidu函数
-    oScript.src = 'http://suggestion.baidu.com/su?wd='+oTxt.value+'&p=3&cb=baidu&from=superpage';
+    oScript.src = 'https://suggestion.baidu.com/su?wd='+oTxt.value+'&p=3&cb=baidu&from=superpage';
     document.body.appendChild(oScript);
 }
 
@@ -153,7 +153,7 @@ function baidu (json)
         }
         if(!css_index.length){
            css_index = document.createElement('link');
-           css_index.href = "http://7d9pos.com1.z0.glb.clouddn.com/css/search.css";
+           css_index.href = "/assets/css/search.css";
            css_index.type = "text/css";
            css_index.id = "index";
            css_index.rel = "stylesheet";
@@ -254,7 +254,7 @@ function Show_Hidden(){
         }
         if(!css_result.length){
            css_result = document.createElement('link');
-           css_result.href = "http://7d9pos.com1.z0.glb.clouddn.com/css/result.css";
+           css_result.href = "/assets/css/result.css";
            css_result.type = "text/css";
            css_result.id = "css_result";
            css_result.rel = "stylesheet";
@@ -272,10 +272,10 @@ function Show_Hidden(){
 
 function h(obj){
     obj.style.behavior='url(#default#homepage)';
-    var a = obj.setHomePage('http://search.997life.com/');
+    var a = obj.setHomePage('https://www.997life.com/search');
 }
 
 function getLuckly(){
-    window.location.href="http://www.997life.com/app/";
+    window.location.href="https://www.997life.com/app/";
 }
 
